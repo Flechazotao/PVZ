@@ -1,6 +1,6 @@
 #include "loginscene.h"
 #include "ui_loginscene.h"
-#include "map1.h"
+#include "classicscene.h"
 loginscene::loginscene(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::loginscene)
@@ -19,9 +19,7 @@ loginscene::~loginscene()
 void loginscene::on_login1_clicked()
 {
     this->hide();
-    MAP1 *scene= new MAP1;
-    scene->setFixedSize(1000,600);
-    scene->setWindowTitle("第一关");
+    classicscene *scene=new classicscene;
     scene->show();
 }
 
