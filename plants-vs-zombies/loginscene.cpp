@@ -1,6 +1,7 @@
 #include "loginscene.h"
 #include "ui_loginscene.h"
 #include "classicscene.h"
+#include "introduceplant.h"
 #include <QApplication>
 loginscene::loginscene(QWidget *parent)
     : QWidget(parent)
@@ -37,6 +38,8 @@ void loginscene::on_Exit_clicked()
 
 void loginscene::on_introduce_Plant_clicked()
 {
-
+    this->hide();
+    introduceplant* scene=new introduceplant;
+    scene->show();
 }
 

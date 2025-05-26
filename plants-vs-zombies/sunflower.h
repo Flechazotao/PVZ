@@ -9,6 +9,7 @@ class SunFlower : public Plant
 public:
     SunFlower();
     void advance(int phase) override;
+    QMovie* getMovie();
 };
 
 #endif // SUNFLOWER_H

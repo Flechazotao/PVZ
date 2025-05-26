@@ -30,9 +30,9 @@ SOURCES += \
     classicsun.cpp \
     classicsunflower.cpp \
     conezombie.cpp \
-    enter.cpp \
     enternext.cpp \
     footballzombie.cpp \
+    introduceplant.cpp \
     loginscene.cpp \
     main.cpp \
     map.cpp \
@@ -72,9 +72,9 @@ HEADERS += \
     classicsun.h \
     classicsunflower.h \
     conezombie.h \
-    enter.h \
     enternext.h \
     footballzombie.h \
+    introduceplant.h \
     loginscene.h \
     map.h \
     mower.h \
@@ -95,6 +95,7 @@ HEADERS += \
     zombie.h
 
 FORMS += \
+    introduceplant.ui \
     loginscene.ui
 
 # Default rules for deployment.

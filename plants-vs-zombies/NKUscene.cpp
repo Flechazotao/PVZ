@@ -1,4 +1,3 @@
-#include "mainwindow.h"
 #include<QSoundEffect>
 #include<QMediaPlayer>
 #include<QtMultimedia/QtMultimedia>

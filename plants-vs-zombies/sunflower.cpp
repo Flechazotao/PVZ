@@ -21,3 +21,7 @@ void SunFlower::advance(int phase)
         scene()->addItem(new Sun(pos()));
     }
 }
+
+QMovie* SunFlower::getMovie(){
+    return movie;
+}
