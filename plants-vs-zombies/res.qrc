@@ -69,5 +69,8 @@
         <file>Picture/Plant_introduce/card_sunflower.png</file>
         <file>Picture/Plant_introduce/introducepanel.png</file>
         <file>Picture/Plant_introduce/grass.png</file>
+        <file>Picture/Zombies_introduce/introducepanel.png</file>
+        <file>Picture/Zombies_introduce/introduce_basiczombie.gif</file>
+        <file>Picture/Zombies_introduce/card_basiczombie.png</file>
     </qresource>
 </RCC>

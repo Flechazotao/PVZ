@@ -2,6 +2,7 @@
 #include "ui_loginscene.h"
 #include "classicscene.h"
 #include "introduceplant.h"
+#include "introducezombies.h"
 #include <QApplication>
 loginscene::loginscene(QWidget *parent)
     : QWidget(parent)
@@ -25,7 +26,9 @@ void loginscene::on_login1_clicked()
 
 void loginscene::on_introduce_Zombies_clicked()
 {
-
+    this->hide();
+    introducezombies* scene=new introducezombies;
+    scene->show();
 }
 
 

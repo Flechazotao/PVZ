@@ -54,3 +54,9 @@ void BasicZombie::advance(int phase)
     }
     setX(x() - speed);
 }
+
+
+QMovie* BasicZombie::getMovie(){
+    return movie;
+}
+

@@ -33,6 +33,7 @@ SOURCES += \
     enternext.cpp \
     footballzombie.cpp \
     introduceplant.cpp \
+    introducezombies.cpp \
     loginscene.cpp \
     main.cpp \
     map.cpp \
@@ -75,6 +76,7 @@ HEADERS += \
     enternext.h \
     footballzombie.h \
     introduceplant.h \
+    introducezombies.h \
     loginscene.h \
     map.h \
     mower.h \
@@ -96,6 +98,7 @@ HEADERS += \
 
 FORMS += \
     introduceplant.ui \
+    introducezombies.ui \
     loginscene.ui
 
 # Default rules for deployment.
