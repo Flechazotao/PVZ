@@ -62,5 +62,8 @@
         <file>pvz.res/ZombiesWon.png</file>
         <file>pvz.res/ZombieWalk1.gif</file>
         <file>pvz.res/ZombieWalk2.gif</file>
+        <file>Picture/Login/Adventure_1.png</file>
+        <file>Picture/Login/MainMenu.png</file>
+        <file>Picture/Map1/map1.jpg</file>
     </qresource>
 </RCC>

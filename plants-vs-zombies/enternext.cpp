@@ -12,14 +12,13 @@ Enternext::Enternext(QWidget *parent)
     this->setFixedSize(800,600);
     this->setWindowTitle("植物大战僵尸");
 
-
 }
 
 void Enternext::paintEvent(QPaintEvent *)
 {
     QPainter painter0(this);
     QPixmap pix;
-    pix.load(":/pvz.res/third.jpg");
+    pix.load(":/Picture/Login/MainMenu.png");
     painter0.drawPixmap(0,0,this->width(),this->height(),pix);
 
     //设置经典模式按钮
@@ -48,9 +47,5 @@ void Enternext::paintEvent(QPaintEvent *)
         this->hide();
         Mambasence = new mambasence;
         Mambasence->show();
-
-
     });
-
-
 }

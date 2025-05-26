@@ -33,9 +33,10 @@ SOURCES += \
     enter.cpp \
     enternext.cpp \
     footballzombie.cpp \
+    loginscene.cpp \
     main.cpp \
-    mainwindow.cpp \
     map.cpp \
+    map1.cpp \
     mower.cpp \
     mypushbutton.cpp \
     other.cpp \
@@ -75,8 +76,9 @@ HEADERS += \
     enter.h \
     enternext.h \
     footballzombie.h \
-    mainwindow.h \
+    loginscene.h \
     map.h \
+    map1.h \
     mower.h \
     mypushbutton.h \
     other.h \
@@ -95,7 +97,8 @@ HEADERS += \
     zombie.h
 
 FORMS += \
-    mainwindow.ui
+    loginscene.ui \
+    map1.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

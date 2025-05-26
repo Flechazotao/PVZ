@@ -24,8 +24,6 @@ Enter::Enter(QWidget *parent)
 
         enternext->show();
 
-
-
     });
 }
 
