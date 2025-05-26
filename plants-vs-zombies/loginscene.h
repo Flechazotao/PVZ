@@ -18,6 +18,12 @@ public:
 private slots:
     void on_login1_clicked();
 
+    void on_introduce_Zombies_clicked();
+
+    void on_Exit_clicked();
+
+    void on_introduce_Plant_clicked();
+
 private:
     Ui::loginscene *ui;
 };

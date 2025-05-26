@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>891</width>
-    <height>619</height>
+    <height>598</height>
    </rect>
   </property>
   <property name="cursor">
@@ -22,14 +22,16 @@
   <widget class="QWidget" name="widget" native="true">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>10</y>
+     <x>0</x>
+     <y>0</y>
      <width>901</width>
      <height>601</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-image :url(:/Picture/Login/MainMenu.png)</string>
+    <string notr="true">QWidget#widget{
+background-image :url(:/Picture/Login/MainMenu.png);
+}</string>
    </property>
    <widget class="QWidget" name="widget_2" native="true">
     <property name="geometry">
@@ -60,21 +62,70 @@
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="introduce_Plant">
+   <widget class="QPushButton" name="introduce_Zombies">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>490</y>
+      <x>722</x>
+      <y>510</y>
       <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#introduce_Zombies{
+border:none;
+background:transparent;
+font: 700 Bold 12pt ;
+}</string>
+    </property>
+    <property name="text">
+     <string>僵尸介绍</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Exit">
+    <property name="geometry">
+     <rect>
+      <x>795</x>
+      <y>500</y>
+      <width>81</width>
       <height>31</height>
      </rect>
     </property>
     <property name="autoFillBackground">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(185, 184, 158);
-font: 700 italic 15pt &quot;Segoe UI&quot;;</string>
+     <string notr="true">QPushButton#Exit{
+border:none;
+background:transparent;
+font: 700 Bold 14pt;
+}</string>
+    </property>
+    <property name="text">
+     <string>退出游戏</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="introduce_Plant">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>480</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#introduce_Plant{
+border:none;
+background:transparent;
+font: 700 Bold 12pt ;
+}</string>
     </property>
     <property name="text">
      <string>植物介绍</string>
