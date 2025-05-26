@@ -29,6 +29,11 @@ void introduceplant::on_sunFlower_clicked()
     QLabel *label = new QLabel;
     label->setMovie(sunflower->getMovie());
     QVBoxLayout *layout = new QVBoxLayout(ui->grass);
+    //让layout控件居中;
+    layout->setAlignment(Qt::AlignCenter);
+    layout->addStretch();
     layout->addWidget(label);
+    layout->addStretch();
+    ui->info->setText(QString::fromStdString(sunflower->getInfo()));
 }
 

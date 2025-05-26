@@ -100,6 +100,19 @@
 }</string>
      </property>
     </widget>
+    <widget class="QLabel" name="info">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>190</y>
+       <width>211</width>
+       <height>161</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">

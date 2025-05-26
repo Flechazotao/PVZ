@@ -5,7 +5,8 @@
 #include <QGraphicsItem>
 #include <QPainter>
 #include <QMovie>
-
+#include <string>
+using namespace std;
 class Plant : public QGraphicsItem
 {
 public:
@@ -19,12 +20,14 @@ public:
     bool collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const override;
     int type() const override;
     void setMovie(QString path);
-
+    void setInfo(string &info);
+    string getInfo();
 protected:
     QMovie *movie;
     int atk;
     int counter;
     int time;
+    string information;
 };
 
 #endif // PLANT_H

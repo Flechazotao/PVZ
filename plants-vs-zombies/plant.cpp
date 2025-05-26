@@ -6,6 +6,7 @@ Plant::Plant()
 {
     movie = nullptr;
     atk = counter = state = time = 0;
+    information="";
 }
 
 Plant::~Plant()
@@ -50,3 +51,12 @@ void Plant::setMovie(QString path)
     movie->start();
 }
 
+//设置植物描述
+void Plant::setInfo(string &info){
+    information=info;
+}
+
+//获取植物描述
+string Plant::getInfo(){
+    return information;
+}
