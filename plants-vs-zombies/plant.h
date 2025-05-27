@@ -21,13 +21,17 @@ public:
     int type() const override;
     void setMovie(QString path);
     void setInfo(string &info);
+    void setName(string &Name);
+    QMovie* getMovie();
     string getInfo();
+    string getName();
 protected:
     QMovie *movie;
     int atk;
     int counter;
     int time;
     string information;
+    string plantname;
 };
 
 #endif // PLANT_H

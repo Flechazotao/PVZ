@@ -72,5 +72,38 @@
         <file>Picture/Zombies_introduce/introducepanel.png</file>
         <file>Picture/Zombies_introduce/introduce_basiczombie.gif</file>
         <file>Picture/Zombies_introduce/card_basiczombie.png</file>
+        <file>Picture/Plant_introduce/card_cherrybomb.png</file>
+        <file>Picture/Plant_introduce/card_peashooter.png</file>
+        <file>Picture/Plant_introduce/card_potatomine.png</file>
+        <file>Picture/Plant_introduce/card_repeaterpea.png</file>
+        <file>Picture/Plant_introduce/card_snowpea.png</file>
+        <file>Picture/Plant_introduce/card_wallnut.png</file>
+        <file>Picture/Plant/cherrybomb/0.gif</file>
+        <file>Picture/Plant/cherrybomb/1.gif</file>
+        <file>Picture/Plant/cherrybomb/Boom.gif</file>
+        <file>Picture/Plant/peashooter/0.gif</file>
+        <file>Picture/Plant/peashooter/1.gif</file>
+        <file>Picture/Plant/potatomine/0.gif</file>
+        <file>Picture/Plant/potatomine/1.gif</file>
+        <file>Picture/Plant/potatomine/ExplosionSpudow.gif</file>
+        <file>Picture/Plant/potatomine/PotatoMine.gif</file>
+        <file>Picture/Plant/potatomine/PotatoMine_mashed.gif</file>
+        <file>Picture/Plant/repeater/0.gif</file>
+        <file>Picture/Plant/repeater/1.gif</file>
+        <file>Picture/Plant/snowpea/0.gif</file>
+        <file>Picture/Plant/snowpea/1.gif</file>
+        <file>Picture/Plant/sunflower/0.gif</file>
+        <file>Picture/Plant/sunflower/1.gif</file>
+        <file>Picture/Plant/sunflower/SunFlower.gif</file>
+        <file>Picture/Plant/sunflower/SunFlower2.gif</file>
+        <file>Picture/Plant/wallnut/0.gif</file>
+        <file>Picture/Plant/wallnut/1.gif</file>
+        <file>Picture/Plant/wallnut/2.gif</file>
+        <file>Picture/Plant/wallnut/boom.gif</file>
+        <file>Picture/Plant/wallnut/BoomWallNutRoll.gif</file>
+        <file>Picture/Plant/wallnut/HugeWallNutRoll.gif</file>
+        <file>Picture/Plant/wallnut/Wallnut_cracked1.gif</file>
+        <file>Picture/Plant/wallnut/Wallnut_cracked2.gif</file>
+        <file>Picture/Plant/wallnut/WallNutRoll.gif</file>
     </qresource>
 </RCC>

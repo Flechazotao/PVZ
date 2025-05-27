@@ -2,12 +2,22 @@
 #include "ui_introduceplant.h"
 #include "loginscene.h"
 #include "sunflower.h"
+#include "wallnut.h"
+#include "snowpea.h"
+#include "cherrybomb.h"
+#include "repeater.h"
+#include "potatomine.h"
+#include "peashooter.h"
+
 introduceplant::introduceplant(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::introduceplant)
 {
     ui->setupUi(this);
     this->setWindowTitle("植物介绍");
+    layout = new QVBoxLayout(ui->grass);
+    label=new QLabel();
+    movie=nullptr;
 }
 
 introduceplant::~introduceplant()
@@ -22,18 +32,70 @@ void introduceplant::on_Exit_clicked()
     scene->show();
 }
 
+void introduceplant::showMovieAndInfo(Plant*p,QString path){
+    // 如果当前有 QMovie，先停止并删除它
+    if (movie)
+        delete movie;
+    movie = new QMovie(path);
+    movie->start();
 
-void introduceplant::on_sunFlower_clicked()
-{
-    SunFlower *sunflower =new SunFlower;
-    QLabel *label = new QLabel;
-    label->setMovie(sunflower->getMovie());
-    QVBoxLayout *layout = new QVBoxLayout(ui->grass);
+    // 如果 label 当前有 QMovie，先停止并删除它
+    if (label) {
+        delete label->movie();  // 停止动画（可选）
+        delete label;   // 释放 QMovie 内存
+    }
+    //设置label
+    label=new QLabel();
+    label->setFixedSize(161,117);
+    label->setMovie(p->getMovie());
+    label->setAlignment(Qt::AlignCenter);
     //让layout控件居中;
     layout->setAlignment(Qt::AlignCenter);
     layout->addStretch();
     layout->addWidget(label);
     layout->addStretch();
-    ui->info->setText(QString::fromStdString(sunflower->getInfo()));
+    //设置植物描述label内容;
+    ui->info->setText(QString::fromStdString(p->getInfo()));
+    //设置植物名称展示label
+    ui->name->setText(QString::fromStdString(p->getName()));
+}
+void introduceplant::on_sunFlower_clicked(){
+
+    showMovieAndInfo(new SunFlower,":/Picture/Plant/sunflower/0.gif");
+}
+
+void introduceplant::on_wallnut_clicked()
+{
+    showMovieAndInfo(new WallNut,":/Picture/Plant/wallnut/0.gif");
+}
+
+
+void introduceplant::on_peashooter_clicked()
+{
+    showMovieAndInfo(new Peashooter,":/Picture/Plant/peashooter/0.gif");
+}
+
+
+void introduceplant::on_potatomine_clicked()
+{
+    showMovieAndInfo(new PotatoMine,":/Picture/Plant/potatomine/0.gif");
+}
+
+
+void introduceplant::on_repeaterpea_clicked()
+{
+    showMovieAndInfo(new Repeater,":/Picture/Plant/repeater/0.gif");
+}
+
+
+void introduceplant::on_snowpea_clicked()
+{
+    showMovieAndInfo(new SnowPea,":/Picture/Plant/snowpea/0.gif");
+}
+
+
+void introduceplant::on_cherrybomb_clicked()
+{
+    showMovieAndInfo(new CherryBomb,":/Picture/Plant/cherrybomb/1.gif");
 }
 

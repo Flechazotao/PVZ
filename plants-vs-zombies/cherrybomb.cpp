@@ -1,10 +1,17 @@
 #include "cherrybomb.h"
+#include <string>
+using namespace std;
+
+static string name="樱桃炸弹";
+static string info="樱桃炸弹，能炸掉一定区域内所有僵尸。\n他们种下就会立刻引爆。\n所以请把他们种在僵尸们的身边。\n伤害：巨大\n范围：一个中等区域内的所有僵尸\n使用方法：单独使用，立即爆炸\n“我要爆‘开了。”樱桃一号说。\n”不，我们是炸‘开了！”它哥哥樱桃二号说。\n经过激烈的商议之后，他们才统一”爆炸这个说法。\n花费：150\t冷却：20秒";
 
 CherryBomb::CherryBomb()
 {
     atk = 1800;
     hp = 300;
     setMovie(":/pvz.res/CherryBomb.gif");
+    setName(name);
+    setInfo(info);
 }
 
 QRectF CherryBomb::boundingRect() const

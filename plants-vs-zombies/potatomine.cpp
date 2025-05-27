@@ -1,4 +1,9 @@
 #include "potatomine.h"
+#include <string>
+using namespace std;
+
+static string name="土豆雷";
+static string info="土豆雷具有强大的威力，\n但是他们需要点时间来武装自己。\n你应把他们种在僵尸前进的路上\n当他们一被接触就会发生爆炸。\n伤害：巨大\n范围：一个小区域内的所有僵尸\n使用方法：单独使用，需要准备时间。\n一些人说土豆雷很懒，\n因为他总是把所有事情留到最后。\n花费：25\t冷却：30秒";
 
 PotatoMine::PotatoMine()
 {
@@ -6,6 +11,8 @@ PotatoMine::PotatoMine()
     hp = 300;
     time = int(15.0 * 1000 / 33);
     setMovie(":/pvz.res/PotatoMine1.gif");
+    setName(name);
+    setInfo(info);
 }
 
 QRectF PotatoMine::boundingRect() const

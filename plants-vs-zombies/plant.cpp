@@ -7,13 +7,13 @@ Plant::Plant()
     movie = nullptr;
     atk = counter = state = time = 0;
     information="";
+    plantname="";
 }
 
 Plant::~Plant()
 {
     delete movie;
 }
-
 
 //返回边界矩形坐标数值
 QRectF Plant::boundingRect() const
@@ -50,7 +50,10 @@ void Plant::setMovie(QString path)
     movie = new QMovie(path);
     movie->start();
 }
-
+//获取植物动图;
+QMovie* Plant::getMovie(){
+    return movie;
+}
 //设置植物描述
 void Plant::setInfo(string &info){
     information=info;
@@ -59,4 +62,14 @@ void Plant::setInfo(string &info){
 //获取植物描述
 string Plant::getInfo(){
     return information;
+}
+
+//设置植物名称;
+void Plant::setName(string &Name){
+    plantname=Name;
+}
+
+//获取植物名称
+string Plant::getName(){
+    return plantname;
 }
