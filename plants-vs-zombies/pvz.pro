@@ -30,7 +30,6 @@ SOURCES += \
     classicsun.cpp \
     classicsunflower.cpp \
     conezombie.cpp \
-    enternext.cpp \
     footballzombie.cpp \
     introduceplant.cpp \
     introducezombies.cpp \
@@ -73,7 +72,6 @@ HEADERS += \
     classicsun.h \
     classicsunflower.h \
     conezombie.h \
-    enternext.h \
     footballzombie.h \
     introduceplant.h \
     introducezombies.h \

@@ -1,10 +1,15 @@
 #include "classicrepeater.h"
 
+static string name="双发射手";
+static string info="双发射手可以一次发射两颗豌豆\n伤害：中等(每颗)\n发射速度：两倍\n双发射手很凶悍，他是在街头混大的。\n他不在乎任何人的看法，无论是植物还是僵尸，\n他打出豌豆，是为了让别人离他远点。\n其实呢，双发射手一直暗暗地渴望着爱情。\n花费:200\t冷却：7.5秒";
+
 classicRepeater::classicRepeater() {
     atk = 25;
     hp = 300;
     time = int(1.4 * 1000 / 33);
     setMovie(":/pvz.res/Repeater.gif");
+    setName(name);
+    setInfo(info);
 }
 
 void classicRepeater::advance(int phase)

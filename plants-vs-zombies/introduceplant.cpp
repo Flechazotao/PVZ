@@ -1,13 +1,13 @@
 #include "introduceplant.h"
 #include "ui_introduceplant.h"
 #include "loginscene.h"
-#include "sunflower.h"
+#include "classicsunflower.h"
 #include "wallnut.h"
-#include "snowpea.h"
+#include "classicsnowpea.h"
 #include "cherrybomb.h"
-#include "repeater.h"
+#include "classicrepeater.h"
 #include "potatomine.h"
-#include "peashooter.h"
+#include "classicpeashooter.h"
 
 introduceplant::introduceplant(QWidget *parent)
     : QWidget(parent)
@@ -61,7 +61,7 @@ void introduceplant::showMovieAndInfo(Plant*p,QString path){
 }
 void introduceplant::on_sunFlower_clicked(){
 
-    showMovieAndInfo(new SunFlower,":/Picture/Plant/sunflower/0.gif");
+    showMovieAndInfo(new classicSunFlower,":/Picture/Plant/sunflower/0.gif");
 }
 
 void introduceplant::on_wallnut_clicked()
@@ -72,7 +72,7 @@ void introduceplant::on_wallnut_clicked()
 
 void introduceplant::on_peashooter_clicked()
 {
-    showMovieAndInfo(new Peashooter,":/Picture/Plant/peashooter/0.gif");
+    showMovieAndInfo(new classicpeashooter,":/Picture/Plant/peashooter/0.gif");
 }
 
 
@@ -84,13 +84,13 @@ void introduceplant::on_potatomine_clicked()
 
 void introduceplant::on_repeaterpea_clicked()
 {
-    showMovieAndInfo(new Repeater,":/Picture/Plant/repeater/0.gif");
+    showMovieAndInfo(new classicRepeater,":/Picture/Plant/repeater/0.gif");
 }
 
 
 void introduceplant::on_snowpea_clicked()
 {
-    showMovieAndInfo(new SnowPea,":/Picture/Plant/snowpea/0.gif");
+    showMovieAndInfo(new classicSnowPea,":/Picture/Plant/snowpea/0.gif");
 }
 
 
