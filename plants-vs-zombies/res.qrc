@@ -105,5 +105,22 @@
         <file>Picture/Plant/wallnut/Wallnut_cracked1.gif</file>
         <file>Picture/Plant/wallnut/Wallnut_cracked2.gif</file>
         <file>Picture/Plant/wallnut/WallNutRoll.gif</file>
+        <file>Picture/Zombie/Zombie/0.gif</file>
+        <file>Picture/Zombie/Zombie/1.gif</file>
+        <file>Picture/Zombie/Zombie/2.gif</file>
+        <file>Picture/Zombie/Zombie/3.gif</file>
+        <file>Picture/Zombie/Zombie/BoomDie.gif</file>
+        <file>Picture/Zombie/Zombie/Zombie.gif</file>
+        <file>Picture/Zombie/Zombie/Zombie2.gif</file>
+        <file>Picture/Zombie/Zombie/Zombie3.gif</file>
+        <file>Picture/Zombie/Zombie/ZombieAttack.gif</file>
+        <file>Picture/Zombie/Zombie/ZombieDie.gif</file>
+        <file>Picture/Zombie/Zombie/ZombieHead.gif</file>
+        <file>Picture/Zombie/Zombie/ZombieLostHead.gif</file>
+        <file>Picture/Zombie/Zombie/ZombieLostHeadAttack.gif</file>
+        <file>Picture/Zombie/BucketheadZombie/0.gif</file>
+        <file>Picture/Zombie/BucketheadZombie/1.gif</file>
+        <file>Picture/Zombie/BucketheadZombie/BucketheadZombie.gif</file>
+        <file>Picture/Zombie/BucketheadZombie/BucketheadZombieAttack.gif</file>
     </qresource>
 </RCC>

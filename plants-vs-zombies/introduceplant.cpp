@@ -47,7 +47,7 @@ void introduceplant::showMovieAndInfo(Plant*p,QString path){
     //设置label
     label=new QLabel();
     label->setFixedSize(161,117);
-    label->setMovie(p->getMovie());
+    label->setMovie(movie);
     label->setAlignment(Qt::AlignCenter);
     //让layout控件居中;
     layout->setAlignment(Qt::AlignCenter);
@@ -61,36 +61,36 @@ void introduceplant::showMovieAndInfo(Plant*p,QString path){
 }
 void introduceplant::on_sunFlower_clicked(){
 
-    showMovieAndInfo(new classicSunFlower,":/Picture/Plant/sunflower/0.gif");
+    showMovieAndInfo(new classicSunFlower,":/Picture/Plant/sunflower/1.gif");
 }
 
 void introduceplant::on_wallnut_clicked()
 {
-    showMovieAndInfo(new WallNut,":/Picture/Plant/wallnut/0.gif");
+    showMovieAndInfo(new WallNut,":/Picture/Plant/wallnut/1.gif");
 }
 
 
 void introduceplant::on_peashooter_clicked()
 {
-    showMovieAndInfo(new classicpeashooter,":/Picture/Plant/peashooter/0.gif");
+    showMovieAndInfo(new classicpeashooter,":/Picture/Plant/peashooter/1.gif");
 }
 
 
 void introduceplant::on_potatomine_clicked()
 {
-    showMovieAndInfo(new PotatoMine,":/Picture/Plant/potatomine/0.gif");
+    showMovieAndInfo(new PotatoMine,":/Picture/Plant/potatomine/PotatoMine.gif");
 }
 
 
 void introduceplant::on_repeaterpea_clicked()
 {
-    showMovieAndInfo(new classicRepeater,":/Picture/Plant/repeater/0.gif");
+    showMovieAndInfo(new classicRepeater,":/Picture/Plant/repeater/1.gif");
 }
 
 
 void introduceplant::on_snowpea_clicked()
 {
-    showMovieAndInfo(new classicSnowPea,":/Picture/Plant/snowpea/0.gif");
+    showMovieAndInfo(new classicSnowPea,":/Picture/Plant/snowpea/1.gif");
 }
 
 
