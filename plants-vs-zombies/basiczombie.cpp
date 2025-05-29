@@ -1,11 +1,15 @@
 #include "basiczombie.h"
 
+static string name = "普通僵尸";
+static string info ="韧性:低\n这种僵尸喜爱脑髓，贪婪而不知足。\n脑髓，脑髓，脑髓，夜以继日地追求着。\n老而臭的脑髓?腐烂的脑髓?\n都没关系。僵尸需要它们。";
 //普通僵尸的构造函数
 BasicZombie::BasicZombie()
 {
     hp = 270;//血量
     atk = 100 * 33 / 1000;//攻击
     speed = 80.0 * 33 / 1000 / 4.7;//移动速度
+    setName(name);
+    setInfo(info);
 
     //随机设置两种移动状态
     if (rand() % 2)
@@ -54,9 +58,3 @@ void BasicZombie::advance(int phase)
     }
     setX(x() - speed);
 }
-
-
-QMovie* BasicZombie::getMovie(){
-    return movie;
-}
-
