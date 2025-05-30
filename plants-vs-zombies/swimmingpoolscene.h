@@ -1,29 +1,11 @@
 #ifndef SWIMMINGPOOLSCENE_H
 #define SWIMMINGPOOLSCENE_H
 
-#include <QMainWindow>
-#include <QGraphicsScene>
-#include <QGraphicsView>
+#include "qgraphicsscene.h"
+#include "qmediaplayer.h"
+#include "qsoundeffect.h"
+#include "qwidget.h"
 
-#include <QTimer>
-
-#include "classicshop.h"
-#include "classcard.h"
-#include "shovel.h"
-#include "button.h"
-
-#include "classicmower.h"
-#include "basiczombie.h"
-#include "conezombie.h"
-#include "bucketzombie.h"
-#include "screenzombie.h"
-#include "footballzombie.h"
-#include <QMediaPlayer>
-
-
-namespace Ui {
-class swimmingpoolscene;
-}
 
 class swimmingpoolscene : public QWidget
 {
@@ -39,11 +21,11 @@ public:
     QAudioOutput *audioOutput = nullptr;
 
 private:
-    Ui::swimmingpoolscene *ui;
     QSoundEffect *sound;
     QTimer *timer;
     QGraphicsScene *scene;
     QGraphicsView *view;
 };
+
 
 #endif // SWIMMINGPOOLSCENE_H

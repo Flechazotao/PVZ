@@ -108,5 +108,7 @@
         <file>Picture/Map2/background5.jpg</file>
         <file>Picture/Map2/StartButton.png</file>
         <file>Picture/Map2/ZombieNote1.png</file>
+        <file>Picture/Plant/lilypad/0.gif</file>
+        <file>Picture/Plant/lilypad/LilyPad.gif</file>
     </qresource>
 </RCC>

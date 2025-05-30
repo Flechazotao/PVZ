@@ -43,8 +43,9 @@ void swimmingpoolmap::dropEvent(QGraphicsSceneDragDropEvent *event)
         //确定位置
         QString s = event->mimeData()->text();
         QPointF pos = mapToScene(event->pos());
-        pos.setX((int(pos.x()) - 249) / 82 * 82 + 290);
-        pos.setY((int(pos.y()) - 81) / 98 * 98 + 130);
+        pos.setX((int(pos.x()) - 249) / 82 * 82 + 295);
+        pos.setY((int(pos.y()) - 81) / 82 * 82 + 135);
+
         //铲除植物
         if (s == "Shovel")
         {

@@ -1,19 +1,23 @@
 #include "swimmingpoolscene.h"
+#include "bucketzombie.h"
+#include "button.h"
+#include "classicmower.h"
+#include "conezombie.h"
+#include "exitbutton.h"
+#include "footballzombie.h"
 #include "loginscene.h"
 #include "qdatetime.h"
 #include "qsoundeffect.h"
 #include "qtimer.h"
+#include "screenzombie.h"
 #include "swimmingpoolmap.h"
-#include "ui_swimmingpoolscene.h"
 #include <QPushButton>
 
 
 swimmingpoolscene::swimmingpoolscene(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::swimmingpoolscene)
 {
-    ui->setupUi(this);
-
+    this->setFixedSize(902,602);
     //生成随机数
     srand(uint(QTime(0,0,0).secsTo(QTime::currentTime())));
 
@@ -46,21 +50,17 @@ swimmingpoolscene::swimmingpoolscene(QWidget *parent)
 
     //设置按钮
     Button *button = new Button(sound, timer);//参数为sound和timer,实现按下暂停，音乐停止，计时器停止，从而实现画面静止
-    button->setPos(950, 20);
+    button->setPos(970, 20);
     scene->addItem(button);
 
     // 创建按钮返回主页面
-    // QPushButton* exit = new QPushButton(this);
-    // exit->setText("返回主页面");
-    // connect(exit, &QPushButton::clicked, this, &swimmingpoolscene::on_exit_clicked);
-    // exit->setStyleSheet("border-image: url(:/pvz.res/Button.png);");
-    // exit->setStyleSheet("font-family: \"Calibri\"; font-weight: 700; font-size: 18pt;");
-    // exit->setFixedSize(160, 40);
-    // QGraphicsProxyWidget *proxy = scene->addWidget(exit);
-    // proxy->setPos(800, 40);
+    exitbutton *exit=new exitbutton(sound, timer,this);
+    exit->setPos(970,60);
+    scene->addItem(exit);
+
     //设置场景
     swimmingpoolmap *map = new swimmingpoolmap;
-    map->setPos(990, 602);
+    map->setPos(618, 326);
     scene->addItem(map);
 
     //用循环语句，设置6个小推车
@@ -76,7 +76,7 @@ swimmingpoolscene::swimmingpoolscene(QWidget *parent)
     //创建
     view = new QGraphicsView(scene, this);
     //设置大小
-    view->resize(990, 602);
+    view->resize(902, 602);
     //反走样功能，调用反锯齿功能，优化图像
     view->setRenderHint(QPainter::Antialiasing);
     //设置背景图
@@ -85,10 +85,10 @@ swimmingpoolscene::swimmingpoolscene(QWidget *parent)
     view->setCacheMode(QGraphicsView::CacheBackground);
     //设置自动刷新模式
     view->setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
+
     connect(timer, &QTimer::timeout, scene, &QGraphicsScene::advance);
     connect(timer, &QTimer::timeout, this, &swimmingpoolscene::addZombie);
     connect(timer, &QTimer::timeout, this, &swimmingpoolscene::check);
-
 
     //启动定时器
     timer->start(33);
@@ -97,21 +97,12 @@ swimmingpoolscene::swimmingpoolscene(QWidget *parent)
 
 swimmingpoolscene::~swimmingpoolscene()
 {
-    delete ui;
     delete sound;
     delete timer;
     delete scene;
     delete view;
 }
-void swimmingpoolscene::on_exit_clicked(){
 
-    this->hide();
-    loginscene w;
-    w.setFixedSize(900, 600);
-    w.setWindowTitle("植物大战僵尸");
-    w.show();
-
-}
 //绘制僵尸
 void swimmingpoolscene::addZombie()
 {
@@ -145,7 +136,7 @@ void swimmingpoolscene::addZombie()
             zombie = new ScreenZombie;
         else
             zombie = new FootballZombie;
-        zombie->setPos(1028, 130 + 98 * i);
+        zombie->setPos(1028, 135 + 82 * i);
         scene->addItem(zombie);
     }
 }

@@ -8,6 +8,7 @@
 #include<QPainter>
 #include<classicscene.h>
 #include"classicmap.h"
+#include "exitbutton.h"
 
 
 //主页面创建
@@ -49,6 +50,11 @@ classicscene::classicscene(QWidget *parent) : QMainWindow(parent)
     button->setPos(970, 20);
     scene->addItem(button);
 
+    // 创建按钮返回主页面
+    exitbutton *exit=new exitbutton(sound, timer,this);
+    exit->setPos(970,60);
+    scene->addItem(exit);
+
     //设置场景
     classicMap *map = new classicMap;
     map->setPos(618, 326);
@@ -63,7 +69,6 @@ classicscene::classicscene(QWidget *parent) : QMainWindow(parent)
     }
 
     //QGraphicsView提供的View组件，用于可视化场景中的内容
-
     //创建
     view = new QGraphicsView(scene, this);
     //设置大小
