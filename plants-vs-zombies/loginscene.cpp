@@ -1,4 +1,6 @@
 #include "loginscene.h"
+// #include "roofscene.h"
+#include "swimmingpoolscene.h"
 #include "ui_loginscene.h"
 #include "classicscene.h"
 #include "introduceplant.h"
@@ -43,6 +45,16 @@ void loginscene::on_introduce_Plant_clicked()
 {
     this->hide();
     introduceplant* scene=new introduceplant;
+    scene->setWindowTitle("植物图鉴");
+    scene->show();
+}
+
+
+void loginscene::on_login2_clicked()
+{
+    this->hide();
+    swimmingpoolscene* scene=new swimmingpoolscene;
+    scene->setWindowTitle("屋顶地图");
     scene->show();
 }
 

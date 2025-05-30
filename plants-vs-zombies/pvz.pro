@@ -50,6 +50,8 @@ SOURCES += \
     snowpea.cpp \
     sun.cpp \
     sunflower.cpp \
+    swimmingpoolmap.cpp \
+    swimmingpoolscene.cpp \
     wallnut.cpp \
     zombie.cpp
 
@@ -91,13 +93,16 @@ HEADERS += \
     snowpea.h \
     sun.h \
     sunflower.h \
+    swimmingpoolmap.h \
+    swimmingpoolscene.h \
     wallnut.h \
     zombie.h
 
 FORMS += \
     introduceplant.ui \
     introducezombies.ui \
-    loginscene.ui
+    loginscene.ui \
+    swimmingpoolscene.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

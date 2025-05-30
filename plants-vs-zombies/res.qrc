@@ -105,5 +105,8 @@
         <file>Picture/Plant/wallnut/Wallnut_cracked1.gif</file>
         <file>Picture/Plant/wallnut/Wallnut_cracked2.gif</file>
         <file>Picture/Plant/wallnut/WallNutRoll.gif</file>
+        <file>Picture/Map2/background5.jpg</file>
+        <file>Picture/Map2/StartButton.png</file>
+        <file>Picture/Map2/ZombieNote1.png</file>
     </qresource>
 </RCC>
