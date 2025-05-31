@@ -5,6 +5,8 @@
 #include <QGraphicsItem>
 #include <QPainter>
 #include <QMovie>
+#include <string>
+using namespace std;
 
 class Zombie : public QGraphicsItem
 {
@@ -25,10 +27,17 @@ public:
     int type() const override;
     void setMovie(QString path);
     void setHead(QString path);
+    void setInfo(string &info);
+    void setName(string &Name);
+    QMovie* getMovie();
+    string getInfo();
+    string getName();
 
 protected:
     QMovie *movie;
     QMovie *head;
+    string information;
+    string Zombiename;
 };
 
 #endif // ZOOMBIE_H

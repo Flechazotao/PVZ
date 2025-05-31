@@ -24,7 +24,7 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QWidget#widget{
-	background-color: rgb(211, 164, 114);
+	background-color: rgb(148, 139, 173);
 	border-radius:10px;
 }</string>
    </property>
@@ -87,9 +87,9 @@
     <widget class="QWidget" name="grass" native="true">
      <property name="geometry">
       <rect>
-       <x>51</x>
+       <x>43</x>
        <y>30</y>
-       <width>163</width>
+       <width>171</width>
        <height>149</height>
       </rect>
      </property>
@@ -98,6 +98,41 @@
 	border-image:url(:/Picture/Plant_introduce/grass.png);
 	border-radius:7px;
 }</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="info">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>205</y>
+       <width>211</width>
+       <height>181</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="name">
+     <property name="geometry">
+      <rect>
+       <x>68</x>
+       <y>200</y>
+       <width>121</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#name{
+	font: 700 bold 20pt;
+	color: rgb(24, 23, 42);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
    </widget>

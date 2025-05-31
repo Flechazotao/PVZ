@@ -1,7 +1,9 @@
 #ifndef INTRODUCEZOMBIES_H
 #define INTRODUCEZOMBIES_H
-
+#include "zombie.h"
 #include <QWidget>
+#include <QVBoxLayout>
+#include <QLabel>
 
 namespace Ui {
 class introducezombies;
@@ -13,6 +15,7 @@ class introducezombies : public QWidget
 
 public:
     explicit introducezombies(QWidget *parent = nullptr);
+    void showMovieAndInfo(Zombie*p,QString path);
     ~introducezombies();
 
 private slots:
@@ -22,6 +25,9 @@ private slots:
 
 private:
     Ui::introducezombies *ui;
+    QVBoxLayout *layout;  // 改为成员变量
+    QLabel *label;
+    QMovie *movie;
 };
 
 #endif // INTRODUCEZOMBIES_H

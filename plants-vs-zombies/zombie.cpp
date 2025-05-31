@@ -8,6 +8,8 @@ Zombie::Zombie()
     movie = head = nullptr;//动画
     hp = atk = state = 0;//血量、攻击力、状态
     speed = 0.0;//速度
+    information="";
+    Zombiename="";
 }
 
 Zombie::~Zombie()
@@ -86,6 +88,30 @@ void Zombie::setHead(QString path)
         delete head;
     head = new QMovie(path);
     head->start();
+}
+
+//获取僵尸动图;
+QMovie* Zombie::getMovie(){
+    return movie;
+}
+//设置僵尸描述
+void Zombie::setInfo(string &info){
+    information=info;
+}
+
+//获取僵尸描述
+string Zombie::getInfo(){
+    return information;
+}
+
+//设置僵尸名称;
+void Zombie::setName(string &Name){
+    Zombiename=Name;
+}
+
+//获取僵尸名称
+string Zombie::getName(){
+    return Zombiename;
 }
 
 
