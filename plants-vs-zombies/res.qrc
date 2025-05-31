@@ -158,5 +158,16 @@
         <file>Picture/Zombie/ScreenDoorZombie/LostHeadWalk1.gif</file>
         <file>Picture/Zombie/ScreenDoorZombie/ScreenDoorZombie.gif</file>
         <file>Picture/Zombie/ScreenDoorZombie/ScreenDoorZombieAttack.gif</file>
+        <file>Picture/Zombie/DuckyTubeZombie1/0.gif</file>
+        <file>Picture/Zombie/DuckyTubeZombie1/1.gif</file>
+        <file>Picture/Zombie/DuckyTubeZombie1/Attack.gif</file>
+        <file>Picture/Zombie/DuckyTubeZombie1/Die.gif</file>
+        <file>Picture/Zombie/DuckyTubeZombie1/Walk1.gif</file>
+        <file>Picture/Zombie/DuckyTubeZombie1/Walk2.gif</file>
+        <file>Picture/Zombie/DuckyTubeZombie2/0.gif</file>
+        <file>Picture/Zombie/DuckyTubeZombie2/1.gif</file>
+        <file>Picture/Zombie/DuckyTubeZombie2/Attack.gif</file>
+        <file>Picture/Zombie/DuckyTubeZombie2/Walk1.gif</file>
+        <file>Picture/Zombie/DuckyTubeZombie2/Walk2.gif</file>
     </qresource>
 </RCC>
