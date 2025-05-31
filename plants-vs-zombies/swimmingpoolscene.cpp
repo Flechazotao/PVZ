@@ -71,7 +71,7 @@ swimmingpoolscene::swimmingpoolscene(QWidget *parent)
     for (int i = 0; i < 6; ++i)
     {
         classicMower *mower = new classicMower;
-        mower->setPos(210, 130 + 85 * i);
+        mower->setPos(210, 135 + 82 * i);
         scene->addItem(mower);
     }
 
@@ -149,6 +149,7 @@ void swimmingpoolscene::addZombie()
             else
                 zombie=new DuckyTubeZombie1;
         }
+        zombie->setZValue(2);
         zombie->setPos(1028, 135 + 82 * i);
         scene->addItem(zombie);  
     }
