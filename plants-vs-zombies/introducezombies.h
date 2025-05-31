@@ -23,6 +23,14 @@ private slots:
 
     void on_basiczombies_clicked();
 
+    void on_ConeheadZombie_clicked();
+
+    void on_BucketheadZombie_clicked();
+
+    void on_ScreenDoorZombie_clicked();
+
+    void on_FootballZombie_clicked();
+
 private:
     Ui::introducezombies *ui;
     QVBoxLayout *layout;  // 改为成员变量

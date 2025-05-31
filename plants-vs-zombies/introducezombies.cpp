@@ -2,6 +2,10 @@
 #include "ui_introducezombies.h"
 #include "loginscene.h"
 #include "basiczombie.h"
+#include "conezombie.h"
+#include "bucketzombie.h"
+#include "screenzombie.h"
+#include "footballzombie.h"
 #include <QVBoxLayout>
 
 introducezombies::introducezombies(QWidget *parent)
@@ -10,9 +14,18 @@ introducezombies::introducezombies(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("僵尸介绍");
+
+
+    //layout = new QVBoxLayout(ui->grass);
+    //layout->setAlignment(Qt::AlignCenter);
+    //label=new QLabel();
+    //movie=nullptr;
     layout = new QVBoxLayout(ui->grass);
-    label=new QLabel();
-    movie=nullptr;
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setAlignment(Qt::AlignCenter);
+    label = new QLabel(ui->grass);
+    label->setFixedSize(171, 149);
+    movie = nullptr;
 }
 
 introducezombies::~introducezombies()
@@ -45,11 +58,13 @@ void introducezombies::showMovieAndInfo(Zombie*p,QString path){
     label->setFixedSize(171,149);
     label->setMovie(movie);
     label->setAlignment(Qt::AlignCenter);
+    label->setContentsMargins(0, 0, 46, 5);
     //让layout中的控件居中;
-    layout->setAlignment(Qt::AlignCenter);
-    layout->addStretch();
-    layout->addWidget(label);
-    layout->addStretch();
+    //layout->setAlignment(Qt::AlignCenter);
+    //layout->addStretch();
+    //layout->addWidget(label);
+    //layout->addStretch();
+    layout->addWidget(label, 0, Qt::AlignCenter);
     //设置植物描述label内容;
     ui->info->setText(QString::fromStdString(p->getInfo()));
     //设置植物名称展示label
@@ -60,5 +75,28 @@ void introducezombies::showMovieAndInfo(Zombie*p,QString path){
 void introducezombies::on_basiczombies_clicked()
 {
     showMovieAndInfo(new BasicZombie,":/Picture/Zombie/Zombie/2.gif");
+}
+
+void introducezombies::on_ConeheadZombie_clicked()
+{
+    showMovieAndInfo(new ConeZombie,":/Picture/Zombie/ConeheadZombie/1.gif");
+}
+
+
+void introducezombies::on_BucketheadZombie_clicked()
+{
+    showMovieAndInfo(new BucketZombie,":/Picture/Zombie/BucketheadZombie/1.gif");
+}
+
+
+void introducezombies::on_ScreenDoorZombie_clicked()
+{
+    showMovieAndInfo(new ScreenZombie,":/Picture/Zombie/ScreenDoorZombie/1.gif");
+}
+
+
+void introducezombies::on_FootballZombie_clicked()
+{
+    showMovieAndInfo(new FootballZombie,":/Picture/Zombie/FootballZombie/1.gif");
 }
 

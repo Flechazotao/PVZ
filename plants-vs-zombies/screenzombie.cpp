@@ -1,10 +1,14 @@
 #include "screenzombie.h"
 
+static string name = "铁栅门僵尸";
+static string info ="他的铁栅门是有效的盾牌。\n韧性:低\n铁栅门韧性:高\n弱点:大喷菇和磁力菇\n门板僵尸上次拜访过的房主防守并不专业，\n在吃掉房主的脑子后拿走了他家的铁栅门。";
 ScreenZombie::ScreenZombie()
 {
     hp = 1370;
     atk = 100 * 33 / 1000;
     speed = 80.0 * 33 / 1000 / 4.7;
+    setName(name);
+    setInfo(info);
     setMovie(":/pvz.res/ScreenZombieWalk.gif");
 }
 

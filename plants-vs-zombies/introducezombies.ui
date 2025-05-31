@@ -105,7 +105,7 @@
       <rect>
        <x>20</x>
        <y>205</y>
-       <width>211</width>
+       <width>221</width>
        <height>181</height>
       </rect>
      </property>
@@ -116,9 +116,9 @@
     <widget class="QLabel" name="name">
      <property name="geometry">
       <rect>
-       <x>68</x>
+       <x>48</x>
        <y>200</y>
-       <width>121</width>
+       <width>161</width>
        <height>25</height>
       </rect>
      </property>
@@ -158,6 +158,66 @@
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ConeheadZombie">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>50</y>
+      <width>101</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#ConeheadZombie{
+	border-image: url(:/Picture/Zombie/ConeheadZombie/0.gif);
+}</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ScreenDoorZombie">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>50</y>
+      <width>101</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#ScreenDoorZombie{
+	border-image: url(:/Picture/Zombie/ScreenDoorZombie/0.gif);
+}</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="FootballZombie">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>170</y>
+      <width>85</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#FootballZombie{
+	border-image: url(:/Picture/Zombie/FootballZombie/0.gif);
+}</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="BucketheadZombie">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>50</y>
+      <width>101</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#BucketheadZombie{
+	border-image: url(:/Picture/Zombie/BucketheadZombie/0.gif);
+}</string>
     </property>
    </widget>
   </widget>

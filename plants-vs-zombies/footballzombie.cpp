@@ -1,10 +1,14 @@
 #include "footballzombie.h"
 
+static string name = "橄榄球僵尸";
+static string info ="橄榄球僵尸的表演秀。\n韧性:极高\n速度:快\n在球场上，橄榄球僵尸表现出110%的激情，\n他进攻防守样样在行。\n虽然他完全不知道橄球是什么。";
 FootballZombie::FootballZombie()
 {
     hp = 1670;
     atk = 100 * 33 / 1000;
     speed = 80.0 * 33 / 1000 / 2.5;
+    setName(name);
+    setInfo(info);
     setMovie(":/pvz.res/FootballZombieWalk.gif");
 }
 
