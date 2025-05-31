@@ -220,6 +220,36 @@
 }</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="DuckyTubeZombie1">
+    <property name="geometry">
+     <rect>
+      <x>114</x>
+      <y>170</y>
+      <width>101</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#DuckyTubeZombie1{
+	border-image: url(:/Picture/Zombie/DuckyTubeZombie1/0.gif);
+}</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="DuckyTubeZombie2">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>170</y>
+      <width>101</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#DuckyTubeZombie2{
+	border-image: url(:/Picture/Zombie/DuckyTubeZombie2/0.gif);
+}</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

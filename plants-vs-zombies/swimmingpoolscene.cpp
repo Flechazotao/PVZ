@@ -10,6 +10,9 @@
 #include "qsoundeffect.h"
 #include "qtimer.h"
 #include "screenzombie.h"
+#include "basiczombie.h"
+#include "duckytubezombie1.h"
+#include "duckytubezombie2.h"
 #include "swimmingpoolmap.h"
 #include "swimmingpoolshop.h"
 #include <QPushButton>
@@ -123,22 +126,31 @@ void swimmingpoolscene::addZombie()
         //生成随机数并进行运算
         time = rand() % (2 * maxtime / 3) + maxtime / 3;
         int type = rand() % 100;
-        int i = rand() % 5;
+        int i = rand() % 6;
         Zombie *zombie;
         //根据随机数各个分布区间出现的概率不同，来随机绘制僵尸
         //普通僵尸最常出现，然后是路障僵尸~~~
-        if (type < 40)
-            zombie = new BasicZombie;
-        else if (type < 70)
-            zombie = new ConeZombie;
-        else if (type < 80)
-            zombie = new BucketZombie;
-        else if (type < 90)
-            zombie = new ScreenZombie;
-        else
-            zombie = new FootballZombie;
+        //根据生成的位置确定僵尸的类型
+        if(i<=1 or i>=4){
+            if (type < 40)
+                zombie = new BasicZombie;
+            else if (type < 70)
+                zombie = new ConeZombie;
+            else if (type < 80)
+                zombie = new BucketZombie;
+            else if (type < 90)
+                zombie = new ScreenZombie;
+            else
+                zombie = new FootballZombie;
+        }
+        else{
+            if(type<65)
+                zombie=new DuckyTubeZombie1;
+            else
+                zombie=new DuckyTubeZombie1;
+        }
         zombie->setPos(1028, 135 + 82 * i);
-        scene->addItem(zombie);
+        scene->addItem(zombie);  
     }
 }
 

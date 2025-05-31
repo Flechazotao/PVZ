@@ -58,7 +58,7 @@ void introducezombies::showMovieAndInfo(Zombie*p,QString path){
     label->setFixedSize(171,149);
     label->setMovie(movie);
     label->setAlignment(Qt::AlignCenter);
-    label->setContentsMargins(0, 0, 46, 5);
+    label->setContentsMargins(0, 0, 20, 5);
     //让layout中的控件居中;
     //layout->setAlignment(Qt::AlignCenter);
     //layout->addStretch();
@@ -98,5 +98,17 @@ void introducezombies::on_ScreenDoorZombie_clicked()
 void introducezombies::on_FootballZombie_clicked()
 {
     showMovieAndInfo(new FootballZombie,":/Picture/Zombie/FootballZombie/1.gif");
+}
+
+
+void introducezombies::on_DuckyTubeZombie1_clicked()
+{
+
+}
+
+
+void introducezombies::on_DuckyTubeZombie2_clicked()
+{
+
 }
 

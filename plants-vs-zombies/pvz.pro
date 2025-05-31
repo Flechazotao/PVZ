@@ -30,6 +30,8 @@ SOURCES += \
     classicsun.cpp \
     classicsunflower.cpp \
     conezombie.cpp \
+    duckytubezombie1.cpp \
+    duckytubezombie2.cpp \
     exitbutton.cpp \
     footballzombie.cpp \
     introduceplant.cpp \
@@ -78,6 +80,8 @@ HEADERS += \
     classicsun.h \
     classicsunflower.h \
     conezombie.h \
+    duckytubezombie1.h \
+    duckytubezombie2.h \
     exitbutton.h \
     footballzombie.h \
     introduceplant.h \

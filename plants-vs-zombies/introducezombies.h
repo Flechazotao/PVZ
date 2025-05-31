@@ -31,6 +31,10 @@ private slots:
 
     void on_FootballZombie_clicked();
 
+    void on_DuckyTubeZombie1_clicked();
+
+    void on_DuckyTubeZombie2_clicked();
+
 private:
     Ui::introducezombies *ui;
     QVBoxLayout *layout;  // 改为成员变量
