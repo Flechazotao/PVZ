@@ -105,7 +105,6 @@
         <file>Picture/Plant/wallnut/Wallnut_cracked1.gif</file>
         <file>Picture/Plant/wallnut/Wallnut_cracked2.gif</file>
         <file>Picture/Plant/wallnut/WallNutRoll.gif</file>
-<<<<<<< HEAD
         <file>Picture/Zombie/Zombie/0.gif</file>
         <file>Picture/Zombie/Zombie/1.gif</file>
         <file>Picture/Zombie/Zombie/2.gif</file>
@@ -123,11 +122,38 @@
         <file>Picture/Zombie/BucketheadZombie/1.gif</file>
         <file>Picture/Zombie/BucketheadZombie/BucketheadZombie.gif</file>
         <file>Picture/Zombie/BucketheadZombie/BucketheadZombieAttack.gif</file>
-=======
         <file>Picture/Map2/background5.jpg</file>
         <file>Picture/Map2/StartButton.png</file>
         <file>Picture/Map2/ZombieNote1.png</file>
         <file>Picture/Plant/lilypad/0.gif</file>
         <file>Picture/Plant/lilypad/LilyPad.gif</file>
+        <file>Picture/Plant_introduce/pool.png</file>
+        <file>pvz.res/LilyPad.png</file>
+        <file>Picture/Plant_introduce/card_lilypad.png</file>
+        <file>Picture/Zombie/ConeheadZombie/0.gif</file>
+        <file>Picture/Zombie/ConeheadZombie/1.gif</file>
+        <file>Picture/Zombie/ConeheadZombie/ConeheadZombie.gif</file>
+        <file>Picture/Zombie/ConeheadZombie/ConeheadZombieAttack.gif</file>
+        <file>Picture/Zombie/FootballZombie/0.gif</file>
+        <file>Picture/Zombie/FootballZombie/1.gif</file>
+        <file>Picture/Zombie/FootballZombie/Attack.gif</file>
+        <file>Picture/Zombie/FootballZombie/BoomDie.gif</file>
+        <file>Picture/Zombie/FootballZombie/Die.gif</file>
+        <file>Picture/Zombie/FootballZombie/FootballZombie.gif</file>
+        <file>Picture/Zombie/FootballZombie/FootballZombieAttack.gif</file>
+        <file>Picture/Zombie/FootballZombie/FootballZombieOrnLost.gif</file>
+        <file>Picture/Zombie/FootballZombie/FootballZombieOrnLostAttack.gif</file>
+        <file>Picture/Zombie/FootballZombie/LostHead.gif</file>
+        <file>Picture/Zombie/FootballZombie/LostHeadAttack.gif</file>
+        <file>Picture/Zombie/FootballZombie/OrnLost.gif</file>
+        <file>Picture/Zombie/FootballZombie/OrnLostAttack.gif</file>
+        <file>Picture/Zombie/ScreenDoorZombie/0.gif</file>
+        <file>Picture/Zombie/ScreenDoorZombie/1.gif</file>
+        <file>Picture/Zombie/ScreenDoorZombie/HeadAttack1.gif</file>
+        <file>Picture/Zombie/ScreenDoorZombie/HeadWalk1.gif</file>
+        <file>Picture/Zombie/ScreenDoorZombie/LostHeadAttack1.gif</file>
+        <file>Picture/Zombie/ScreenDoorZombie/LostHeadWalk1.gif</file>
+        <file>Picture/Zombie/ScreenDoorZombie/ScreenDoorZombie.gif</file>
+        <file>Picture/Zombie/ScreenDoorZombie/ScreenDoorZombieAttack.gif</file>
     </qresource>
 </RCC>
