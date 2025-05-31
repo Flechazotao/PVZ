@@ -147,7 +147,7 @@ void swimmingpoolscene::addZombie()
             if(type<65)
                 zombie=new DuckyTubeZombie1;
             else
-                zombie=new DuckyTubeZombie1;
+                zombie=new DuckyTubeZombie2;
         }
         zombie->setPos(1028, 135 + 82 * i);
         scene->addItem(zombie);  

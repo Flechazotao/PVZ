@@ -188,5 +188,3 @@ void swimmingpoolshop::addPlant(QString s, QPointF pos)
         counter = 0;
         return;
 }
-
-

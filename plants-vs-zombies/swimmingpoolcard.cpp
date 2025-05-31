@@ -36,6 +36,13 @@ void swimmingpoolcard::paint(QPainter *painter, const QStyleOptionGraphicsItem *
         painter->setBrush(brush);
         painter->drawRect(QRectF(-48, -68, 98, 132 * (1 - qreal(counter) / cool[map[text]])));
     }
+    swimmingpoolshop *shop = qgraphicsitem_cast<swimmingpoolshop *>(parentItem());
+    if(cost[map[text]] > shop->sun)
+    {
+        QBrush brush(QColor(0, 0, 0, 200));
+        painter->setBrush(brush);
+        painter->drawRect(QRectF(-48, -68, 98, 136));
+    }
 }
 
 void swimmingpoolcard::advance(int phase)

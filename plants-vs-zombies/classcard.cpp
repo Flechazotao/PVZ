@@ -1,4 +1,5 @@
 #include "classcard.h"
+#include "classicshop.h"
 #include<classicshop.h>
 
 const QMap<QString, int> classCard::map = {{"SunFlower", 0}, {"Peashooter", 1}, {"CherryBomb", 2}, {"WallNut", 3},
@@ -35,6 +36,13 @@ void classCard::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
         QBrush brush(QColor(0, 0, 0, 200));
         painter->setBrush(brush);
         painter->drawRect(QRectF(-48, -68, 98, 132 * (1 - qreal(counter) / cool[map[text]])));
+    }
+    classicshop *shop = qgraphicsitem_cast<classicshop *>(parentItem());
+    if(cost[map[text]] > shop->sun)
+    {
+        QBrush brush(QColor(0, 0, 0, 200));
+        painter->setBrush(brush);
+        painter->drawRect(QRectF(-48, -68, 98, 136));
     }
 }
 
