@@ -1,23 +1,26 @@
-#include "classicscene.h"
-#include<QSoundEffect>
-#include<QMediaPlayer>
-#include<QtMultimedia/QtMultimedia>
-#include<QtMultimediaWidgets/QVideoWidget>
-#include<QDebug>
-#include<QAudioOutput>
-#include<QPainter>
-#include<classicscene.h>
-#include"classicmap.h"
+#include "swimmingpoolscene.h"
+#include "bucketzombie.h"
+#include "button.h"
+#include "classicmower.h"
+#include "conezombie.h"
 #include "exitbutton.h"
+#include "footballzombie.h"
+#include "loginscene.h"
+#include "qdatetime.h"
+#include "qsoundeffect.h"
+#include "qtimer.h"
+#include "screenzombie.h"
+#include "swimmingpoolmap.h"
+#include <QPushButton>
 
 
-//主页面创建
-
-classicscene::classicscene(QWidget *parent) : QMainWindow(parent)
+swimmingpoolscene::swimmingpoolscene(QWidget *parent)
+    : QWidget(parent)
 {
-
     this->setFixedSize(902,602);
-    srand(uint(QTime(0,0,0).secsTo(QTime::currentTime())));//生成随机数
+    //生成随机数
+    srand(uint(QTime(0,0,0).secsTo(QTime::currentTime())));
+
     //设置并播放背景音乐
     QSoundEffect * sound = new QSoundEffect(this);
     sound->setSource(QUrl::fromLocalFile(":/pvz.res/seeyouagain.wav"));
@@ -37,7 +40,7 @@ classicscene::classicscene(QWidget *parent) : QMainWindow(parent)
     scene->setSceneRect(150, 0, 900, 600);
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
     classicshop *shop = new classicshop;//设置购买栏
-    shop->setPos(520, 45);//调整购买栏大小
+    shop->setPos(520, 40);//调整购买栏大小
     scene->addItem(shop);
 
     //设置铲子
@@ -56,19 +59,20 @@ classicscene::classicscene(QWidget *parent) : QMainWindow(parent)
     scene->addItem(exit);
 
     //设置场景
-    classicMap *map = new classicMap;
+    swimmingpoolmap *map = new swimmingpoolmap;
     map->setPos(618, 326);
     scene->addItem(map);
 
-    //用循环语句，设置5个小推车
-    for (int i = 0; i < 5; ++i)
+    //用循环语句，设置6个小推车
+    for (int i = 0; i < 6; ++i)
     {
         classicMower *mower = new classicMower;
-        mower->setPos(210, 130 + 98 * i);
+        mower->setPos(210, 130 + 85 * i);
         scene->addItem(mower);
     }
 
     //QGraphicsView提供的View组件，用于可视化场景中的内容
+
     //创建
     view = new QGraphicsView(scene, this);
     //设置大小
@@ -76,22 +80,22 @@ classicscene::classicscene(QWidget *parent) : QMainWindow(parent)
     //反走样功能，调用反锯齿功能，优化图像
     view->setRenderHint(QPainter::Antialiasing);
     //设置背景图
-    view->setBackgroundBrush(QPixmap(":/pvz.res/Background.jpg"));
+    view->setBackgroundBrush(QPixmap(":/Picture/Map2/background5.jpg"));
     //进行画质优化
     view->setCacheMode(QGraphicsView::CacheBackground);
     //设置自动刷新模式
     view->setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
-    connect(timer, &QTimer::timeout, scene, &QGraphicsScene::advance);
-    connect(timer, &QTimer::timeout, this, &classicscene::addZombie);
-    connect(timer, &QTimer::timeout, this, &classicscene::check);
 
+    connect(timer, &QTimer::timeout, scene, &QGraphicsScene::advance);
+    connect(timer, &QTimer::timeout, this, &swimmingpoolscene::addZombie);
+    connect(timer, &QTimer::timeout, this, &swimmingpoolscene::check);
 
     //启动定时器
     timer->start(33);
     view->show();
 }
 
-classicscene::~classicscene()
+swimmingpoolscene::~swimmingpoolscene()
 {
     delete sound;
     delete timer;
@@ -100,7 +104,7 @@ classicscene::~classicscene()
 }
 
 //绘制僵尸
-void classicscene::addZombie()
+void swimmingpoolscene::addZombie()
 {
     static int low = 4;
     static int high = 8;
@@ -132,13 +136,13 @@ void classicscene::addZombie()
             zombie = new ScreenZombie;
         else
             zombie = new FootballZombie;
-        zombie->setPos(1028, 130 + 98 * i);
+        zombie->setPos(1028, 135 + 82 * i);
         scene->addItem(zombie);
     }
 }
 
 //通过判断僵尸距离左边界的距离来判断是否游戏结束
-void classicscene::check()
+void swimmingpoolscene::check()
 {
     static int time = 1 * 1000 / 33;
     static int counter = 0;
@@ -156,5 +160,3 @@ void classicscene::check()
             }
     }
 }
-
-

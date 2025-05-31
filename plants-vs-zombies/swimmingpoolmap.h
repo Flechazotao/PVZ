@@ -1,5 +1,5 @@
-#ifndef CLASSICMAP_H
-#define CLASSICMAP_H
+#ifndef SWIMMINGPOOLMAP_H
+#define SWIMMINGPOOLMAP_H
 
 #include "other.h"
 #include "plant.h"
@@ -7,10 +7,13 @@
 #include "shovel.h"
 #include <QGraphicsSceneDragDropEvent>
 
-class classicMap : public Other
+class swimmingpoolmap : public Other
 {
 public:
-    classicMap();
+    swimmingpoolmap() {
+        dragOver = false;
+        setAcceptDrops(true);
+    }
     QRectF boundingRect() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
     void dragEnterEvent(QGraphicsSceneDragDropEvent *event) override;

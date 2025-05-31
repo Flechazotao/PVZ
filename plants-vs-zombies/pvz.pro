@@ -30,9 +30,11 @@ SOURCES += \
     classicsun.cpp \
     classicsunflower.cpp \
     conezombie.cpp \
+    exitbutton.cpp \
     footballzombie.cpp \
     introduceplant.cpp \
     introducezombies.cpp \
+    lilypad.cpp \
     loginscene.cpp \
     main.cpp \
     map.cpp \
@@ -50,6 +52,9 @@ SOURCES += \
     snowpea.cpp \
     sun.cpp \
     sunflower.cpp \
+    swimmingpoolmap.cpp \
+    swimmingpoolscene.cpp \
+    swimmingpoolshop.cpp \
     wallnut.cpp \
     zombie.cpp
 
@@ -72,9 +77,11 @@ HEADERS += \
     classicsun.h \
     classicsunflower.h \
     conezombie.h \
+    exitbutton.h \
     footballzombie.h \
     introduceplant.h \
     introducezombies.h \
+    lilypad.h \
     loginscene.h \
     map.h \
     mower.h \
@@ -91,6 +98,9 @@ HEADERS += \
     snowpea.h \
     sun.h \
     sunflower.h \
+    swimmingpoolmap.h \
+    swimmingpoolscene.h \
+    swimmingpoolshop.h \
     wallnut.h \
     zombie.h
 

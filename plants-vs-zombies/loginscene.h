@@ -24,6 +24,8 @@ private slots:
 
     void on_introduce_Plant_clicked();
 
+    void on_login2_clicked();
+
 private:
     Ui::loginscene *ui;
 };
