@@ -34,6 +34,8 @@ private slots:
 
     void on_cherrybomb_clicked();
 
+    void on_lilypad_clicked();
+
 private:
     Ui::introduceplant *ui;
     QVBoxLayout *layout;  // 改为成员变量

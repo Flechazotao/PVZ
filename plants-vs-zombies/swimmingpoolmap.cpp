@@ -1,4 +1,5 @@
 #include "swimmingpoolmap.h"
+#include "swimmingpoolshop.h"
 
 QRectF swimmingpoolmap::boundingRect() const {
     return QRectF(-369, -235, 738, 470);
@@ -55,7 +56,7 @@ void swimmingpoolmap::dropEvent(QGraphicsSceneDragDropEvent *event)
         //种植植物
         else
         {
-            classicshop * shop = qgraphicsitem_cast<classicshop *>(scene()->items(QPointF(300, 15))[0]);
+            swimmingpoolshop * shop = qgraphicsitem_cast<swimmingpoolshop *>(scene()->items(QPointF(300, 15))[0]);
             shop->addPlant(s, pos);
         }
     }

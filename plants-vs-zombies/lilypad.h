@@ -5,7 +5,7 @@
 #include "plant.h"
 #include "zombie.h"
 
-class lilypad: public Plant,public Other
+class lilypad: public Plant
 {
 public:
     lilypad();

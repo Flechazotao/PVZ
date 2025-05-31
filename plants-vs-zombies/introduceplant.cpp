@@ -1,4 +1,5 @@
 #include "introduceplant.h"
+#include "lilypad.h"
 #include "ui_introduceplant.h"
 #include "loginscene.h"
 #include "classicsunflower.h"
@@ -59,43 +60,97 @@ void introduceplant::showMovieAndInfo(Plant*p,QString path){
     //设置植物名称展示label
     ui->name->setText(QString::fromStdString(p->getName()));
 }
-void introduceplant::on_sunFlower_clicked(){
-
+void introduceplant::on_sunFlower_clicked()
+{
+    ui->grass->setStyleSheet(
+        "QWidget#grass{"
+        "   border-image:url(:/Picture/Plant_introduce/grass.png);"
+        "   border-radius:7px;"
+        "}"
+        );
     showMovieAndInfo(new classicSunFlower,":/Picture/Plant/sunflower/0.gif");
 }
 
 void introduceplant::on_wallnut_clicked()
 {
+    ui->grass->setStyleSheet(
+        "QWidget#grass{"
+        "   border-image:url(:/Picture/Plant_introduce/grass.png);"
+        "   border-radius:7px;"
+        "}"
+        );
     showMovieAndInfo(new WallNut,":/Picture/Plant/wallnut/0.gif");
 }
 
 
 void introduceplant::on_peashooter_clicked()
 {
+    ui->grass->setStyleSheet(
+        "QWidget#grass{"
+        "   border-image:url(:/Picture/Plant_introduce/grass.png);"
+        "   border-radius:7px;"
+        "}"
+        );
     showMovieAndInfo(new classicpeashooter,":/Picture/Plant/peashooter/0.gif");
 }
 
 
 void introduceplant::on_potatomine_clicked()
 {
+    ui->grass->setStyleSheet(
+        "QWidget#grass{"
+        "   border-image:url(:/Picture/Plant_introduce/grass.png);"
+        "   border-radius:7px;"
+        "}"
+        );
     showMovieAndInfo(new PotatoMine,":/Picture/Plant/potatomine/0.gif");
 }
 
 
 void introduceplant::on_repeaterpea_clicked()
 {
+    ui->grass->setStyleSheet(
+        "QWidget#grass{"
+        "   border-image:url(:/Picture/Plant_introduce/grass.png);"
+        "   border-radius:7px;"
+        "}"
+        );
     showMovieAndInfo(new classicRepeater,":/Picture/Plant/repeater/0.gif");
 }
 
 
 void introduceplant::on_snowpea_clicked()
 {
+    ui->grass->setStyleSheet(
+        "QWidget#grass{"
+        "   border-image:url(:/Picture/Plant_introduce/grass.png);"
+        "   border-radius:7px;"
+        "}"
+        );
     showMovieAndInfo(new classicSnowPea,":/Picture/Plant/snowpea/0.gif");
 }
 
 
 void introduceplant::on_cherrybomb_clicked()
 {
+    ui->grass->setStyleSheet(
+        "QWidget#grass{"
+        "   border-image:url(:/Picture/Plant_introduce/grass.png);"
+        "   border-radius:7px;"
+        "}"
+        );
     showMovieAndInfo(new CherryBomb,":/Picture/Plant/cherrybomb/1.gif");
+}
+
+
+void introduceplant::on_lilypad_clicked()
+{
+    ui->grass->setStyleSheet(
+        "QWidget#grass{"
+        "   border-image:url(:/Picture/Plant_introduce/pool.png);"
+        "   border-radius:7px;"
+        "}"
+        );
+    showMovieAndInfo(new lilypad,":/Picture/Plant/lilypad/LilyPad.gif");
 }
 

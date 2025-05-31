@@ -256,6 +256,22 @@
 }</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="lilypad">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>160</y>
+      <width>61</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#lilypad{
+	border-image:url(:/Picture/Plant_introduce/card_lilypad.png);
+	
+}</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

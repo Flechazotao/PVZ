@@ -11,6 +11,7 @@
 #include "qtimer.h"
 #include "screenzombie.h"
 #include "swimmingpoolmap.h"
+#include "swimmingpoolshop.h"
 #include <QPushButton>
 
 
@@ -39,7 +40,7 @@ swimmingpoolscene::swimmingpoolscene(QWidget *parent)
     //以下为设置场景过程
     scene->setSceneRect(150, 0, 900, 600);
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
-    classicshop *shop = new classicshop;//设置购买栏
+    swimmingpoolshop *shop = new swimmingpoolshop;//设置购买栏
     shop->setPos(520, 40);//调整购买栏大小
     scene->addItem(shop);
 

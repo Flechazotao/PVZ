@@ -52,6 +52,7 @@ SOURCES += \
     snowpea.cpp \
     sun.cpp \
     sunflower.cpp \
+    swimmingpoolcard.cpp \
     swimmingpoolmap.cpp \
     swimmingpoolscene.cpp \
     swimmingpoolshop.cpp \
@@ -98,6 +99,7 @@ HEADERS += \
     snowpea.h \
     sun.h \
     sunflower.h \
+    swimmingpoolcard.h \
     swimmingpoolmap.h \
     swimmingpoolscene.h \
     swimmingpoolshop.h \
