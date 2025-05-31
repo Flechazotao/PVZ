@@ -119,7 +119,7 @@ void swimmingpoolshop::addPlant(QString s, QPointF pos)
             plant = new classicRepeater; break;
         }
         targetPad->setHostedPlant(plant);
-
+        plant->setZValue(1);//图层1;
         plant->setPos(pos);
         scene()->addItem(plant);
         QList<QGraphicsItem *> child = childItems();
@@ -173,9 +173,14 @@ void swimmingpoolshop::addPlant(QString s, QPointF pos)
         {
             QPointF adjustedPos = pos;
             adjustedPos.setY(pos.y() + 20);
+            plant->setZValue(1);//图层1;
             plant->setPos(adjustedPos);
         }
-        else plant->setPos(pos);
+        else
+        {
+            plant->setPos(pos);
+            plant->setZValue(1);//图层1;
+        }
 
         scene()->addItem(plant);
         QList<QGraphicsItem *> child = childItems();
