@@ -10,6 +10,13 @@ lilypad::lilypad() {
     setName(name);
     setInfo(info);
 }
+
+QRectF lilypad::boundingRect() const {
+    // 宽度63，高度46，中心点对齐
+    return QRectF(-31.5, -23, 63, 46); // 注意：Qt的QRectF参数是 (x, y, width, height)
+}
+
+//每时每刻更新状态;
 void lilypad::advance(int phase) {
     if (!phase)
         return;
@@ -17,3 +24,19 @@ void lilypad::advance(int phase) {
     if (hp <= 0)
         delete this;
 };
+
+//是否承载了其他植物;
+bool lilypad::hasPlant(){
+    return p;
+}
+
+//在荷叶上种植物;
+void lilypad::setHostedPlant(Plant*newplant){
+    p=newplant;
+    QPointF offset(
+        (boundingRect().width() - newplant->boundingRect().width()) / 2,
+        -newplant->boundingRect().height()/3
+        );
+    newplant->setPos(pos() + offset);
+    return;
+}
