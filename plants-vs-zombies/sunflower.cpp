@@ -9,7 +9,7 @@ SunFlower::SunFlower()
 {
     hp = 300;
     time = int(10.0 * 1000 / 33);
-    setMovie(":/pvz.res/SunFlower.gif");
+    setMovie(":/Picture/Plant/sunflower/1.gif");
     setInfo(info);
     setName(name);
 }

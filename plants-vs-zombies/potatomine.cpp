@@ -10,7 +10,7 @@ PotatoMine::PotatoMine()
     atk = 1800;
     hp = 300;
     time = int(15.0 * 1000 / 33);
-    setMovie(":/pvz.res/PotatoMine1.gif");
+    setMovie(":/Picture/Plant/potatomine/1.gif");
     setName(name);
     setInfo(info);
 }
@@ -33,7 +33,7 @@ void PotatoMine::advance(int phase)
         state = 1;
         counter = 0;
         time = int(1.0 * 1000 / 33);
-        setMovie(":/pvz.res/PotatoMine.gif");
+        setMovie(":/Picture/Plant/potatomine/PotatoMine.gif");
     }
     else if (state == 1 && ++counter >= time)
     {
@@ -42,7 +42,7 @@ void PotatoMine::advance(int phase)
         if (!items.isEmpty())
         {//爆炸状态
             state = 2;
-            setMovie(":/pvz.res/PotatoMineBomb.gif");
+            setMovie(":/Picture/Plant/potatomine/PotatoMine_mashed.gif");
             foreach (QGraphicsItem *item, items)
             {
                 Zombie *zombie = qgraphicsitem_cast<Zombie *>(item);
@@ -50,6 +50,7 @@ void PotatoMine::advance(int phase)
                 if (zombie->hp <= 0)
                     delete zombie;
             }
+            //setMovie(":/Picture/Plant/potatomine/ExplosionSpudow.gif");
         }
     }
     //爆炸动画结束

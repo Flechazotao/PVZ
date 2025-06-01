@@ -21,8 +21,11 @@ void DuckyTubeZombie1::advance(int phase)
         if (state < 2)
         {
             state = 2;
-            setMovie(":/Picture/Zombie/DuckyTubeZombie1/Die.gif");
-            setHead(":/pvz.res/ZombieHead.gif");
+            if(x() < 240 or x()>942)
+                setMovie(":/Picture/Zombie/Zombie/ZombieDie.gif");
+            else
+                setMovie(":/Picture/Zombie/DuckyTubeZombie1/Die.gif");
+            setHead(":/Picture/Zombie/Zombie/ZombieHead.gif");
         }
         else if (movie->currentFrameNumber() == movie->frameCount() - 1)
             delete this;

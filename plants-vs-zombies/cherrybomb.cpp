@@ -9,7 +9,7 @@ CherryBomb::CherryBomb()
 {
     atk = 1800;
     hp = 300;
-    setMovie(":/pvz.res/CherryBomb.gif");
+    setMovie(":/Picture/Plant/cherrybomb/1.gif");
     setName(name);
     setInfo(info);
 }
@@ -31,7 +31,7 @@ void CherryBomb::advance(int phase)
     else if (state == 0 && movie->currentFrameNumber() == movie->frameCount() - 1)
     {
         state = 1;
-        setMovie(":/pvz.res/Boom.gif");
+        setMovie(":/Picture/Plant/cherrybomb/Boom.gif");
         QList<QGraphicsItem *> items = collidingItems();
         foreach (QGraphicsItem *item, items)
         {
@@ -41,7 +41,7 @@ void CherryBomb::advance(int phase)
             if (zombie->hp <= 0)
             {
                 zombie->state = 3;
-                zombie->setMovie(":/pvz.res/Burn.gif");
+                zombie->setMovie(":/Picture/Zombie/Zombie/BoomDie.gif");
             }
         }
     }

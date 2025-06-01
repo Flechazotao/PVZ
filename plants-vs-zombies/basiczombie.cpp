@@ -13,9 +13,9 @@ BasicZombie::BasicZombie()
 
     //随机设置两种移动状态
     if (rand() % 2)
-        setMovie(":/pvz.res/ZombieWalk1.gif");
+        setMovie(":/Picture/Zombie/Zombie/Zombie.gif");
     else
-        setMovie(":/pvz.res/ZombieWalk2.gif");
+        setMovie(":/Picture/Zombie/Zombie/Zombie2.gif");
 }
 
 //有三种状态，行走，攻击，死亡，分别记为0，1，2。
@@ -29,8 +29,8 @@ void BasicZombie::advance(int phase)
         if (state < 2)
         {
             state = 2;
-            setMovie(":/pvz.res/ZombieDie.gif");
-            setHead(":/pvz.res/ZombieHead.gif");
+            setMovie(":/Picture/Zombie/Zombie/ZombieDie.gif");
+            setHead(":/Picture/Zombie/Zombie/ZombieHead.gif");
         }
         else if (movie->currentFrameNumber() == movie->frameCount() - 1)
             delete this;
@@ -44,7 +44,7 @@ void BasicZombie::advance(int phase)
         if (state != 1)
         {
             state = 1;
-            setMovie(":/pvz.res/ZombieAttack.gif");
+            setMovie(":/Picture/Zombie/Zombie/ZombieAttack.gif");
         }
         return;
     }
@@ -52,9 +52,9 @@ void BasicZombie::advance(int phase)
     {//行走
         state = 0;
         if (rand() % 2)
-            setMovie(":/pvz.res/ZombieWalk1.gif");
+            setMovie(":/Picture/Zombie/Zombie/Zombie.gif");
         else
-            setMovie(":/pvz.res/ZombieWalk2.gif");
+            setMovie(":/Picture/Zombie/Zombie/Zombie2.gif");
     }
     setX(x() - speed);
 }

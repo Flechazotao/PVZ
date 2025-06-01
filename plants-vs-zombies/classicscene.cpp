@@ -76,7 +76,7 @@ classicscene::classicscene(QWidget *parent) : QMainWindow(parent)
     //反走样功能，调用反锯齿功能，优化图像
     view->setRenderHint(QPainter::Antialiasing);
     //设置背景图
-    view->setBackgroundBrush(QPixmap(":/pvz.res/Background.jpg"));
+    view->setBackgroundBrush(QPixmap(":/Picture/Map1/map1.jpg"));
     //进行画质优化
     view->setCacheMode(QGraphicsView::CacheBackground);
     //设置自动刷新模式
@@ -149,7 +149,7 @@ void classicscene::check()
         foreach (QGraphicsItem *item, items)
             if (item->type() == Zombie::Type && item->x() < 200)
             {
-                scene->addPixmap(QPixmap(":/pvz.res/ZombiesWon.png"))->setPos(336, 0);
+                scene->addPixmap(QPixmap(":/Picture/Screen/ZombiesWon.png"))->setPos(336, 40);
                 scene->advance();
                 timer->stop();
                 return;

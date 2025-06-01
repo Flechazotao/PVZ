@@ -17,7 +17,7 @@ void classicPea::paint(QPainter *painter, const QStyleOptionGraphicsItem *option
 {
     Q_UNUSED(option)
     Q_UNUSED(widget)
-    painter->drawPixmap(QRect(-12, -28, 24, 24), QPixmap(snow ? ":/pvz.res/PeaSnow.png" : ":/pvz.res/Pea.png"));
+    painter->drawPixmap(QRect(-12, -28, 24, 24), QPixmap(snow ? ":/Picture/Pea/PeaIce_0.png" : ":/Picture/Pea/PeaNormal_0.png"));
 }
 
 bool classicPea::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const

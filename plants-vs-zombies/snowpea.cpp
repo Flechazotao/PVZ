@@ -11,7 +11,7 @@ SnowPea::SnowPea()
     atk = 25;
     hp = 300;
     time = int(1.4 * 1000 / 33);
-    setMovie(":/pvz.res/SnowPea.gif");
+    setMovie(":/Picture/Plant/snowpea/1.gif");
     setName(name);
     setInfo(info);
 }

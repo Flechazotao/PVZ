@@ -15,7 +15,7 @@ void Button::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
 {
     Q_UNUSED(option)
     Q_UNUSED(widget)
-    painter->drawPixmap(QRect(-80, -20, 160, 40), QPixmap(":/pvz.res/Button.png"));
+    painter->drawPixmap(QRect(-80, -20, 160, 40), QPixmap(":/Picture/Button.png"));
     painter->setPen(Qt::green);
     QFont font("Calibri", 18, QFont::Bold, true);
     painter->setFont(font);

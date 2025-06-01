@@ -54,7 +54,7 @@ void loginscene::on_login2_clicked()
 {
     this->hide();
     swimmingpoolscene* scene=new swimmingpoolscene;
-    scene->setWindowTitle("屋顶地图");
+    scene->setWindowTitle("水池地图");
     scene->show();
 }
 

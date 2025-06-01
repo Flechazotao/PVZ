@@ -9,7 +9,7 @@ FootballZombie::FootballZombie()
     speed = 80.0 * 33 / 1000 / 2.5;
     setName(name);
     setInfo(info);
-    setMovie(":/pvz.res/FootballZombieWalk.gif");
+    setMovie(":/Picture/Zombie/FootballZombie/FootballZombie.gif");
 }
 
 void FootballZombie::advance(int phase)
@@ -22,8 +22,8 @@ void FootballZombie::advance(int phase)
         if (state < 2)
         {
             state = 2;
-            setMovie(":/pvz.res/FootballZombieDie.gif");
-            setHead(":/pvz.res/ZombieHead.gif");
+            setMovie(":/Picture/Zombie/FootballZombie/Die.gif");
+            setHead(":/Picture/Zombie/Zombie/ZombieHead.gif");
 
         }
         else if (movie->currentFrameNumber() == movie->frameCount() - 1)
@@ -38,14 +38,14 @@ void FootballZombie::advance(int phase)
         if (state != 1)
         {
             state = 1;
-            setMovie(":/pvz.res/FootballZombieAttack.gif");
+            setMovie(":/Picture/Zombie/FootballZombie/Attack.gif");
         }
         return;
     }
     if (state)
     {
         state = 0;
-        setMovie(":/pvz.res/FootballZombieWalk.gif");
+        setMovie(":/Picture/Zombie/FootballZombie/FootballZombie.gif");
     }
     setX(x() - speed);
 }

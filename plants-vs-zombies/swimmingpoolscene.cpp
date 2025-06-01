@@ -167,7 +167,7 @@ void swimmingpoolscene::check()
         foreach (QGraphicsItem *item, items)
             if (item->type() == Zombie::Type && item->x() < 200)
             {
-                scene->addPixmap(QPixmap(":/pvz.res/ZombiesWon.png"))->setPos(336, 0);
+                scene->addPixmap(QPixmap(":/Picture/Screen/ZombiesWon.png"))->setPos(336, 40);
                 scene->advance();
                 timer->stop();
                 return;
