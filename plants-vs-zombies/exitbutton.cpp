@@ -1,11 +1,12 @@
 #include "exitbutton.h"
 #include "loginscene.h"
 
-exitbutton::exitbutton(QSoundEffect *s, QTimer *t,QWidget *w)
+exitbutton::exitbutton(QSoundEffect *s, QTimer *t,QWidget *w,const std::string&title)
 {
     sound = s;
     timer = t;
     widget = w;
+    qstr = QString::fromStdString(title);
 }
 
 QRectF exitbutton::boundingRect() const
@@ -21,7 +22,7 @@ void exitbutton::paint(QPainter *painter, const QStyleOptionGraphicsItem *option
     painter->setPen(Qt::green);
     QFont font("Calibri", 16, QFont::Bold, true);
     painter->setFont(font);
-    painter->drawText(boundingRect(), Qt::AlignCenter, "返回登陆页面");
+    painter->drawText(boundingRect(), Qt::AlignCenter, qstr);
 }
 
 void exitbutton::mousePressEvent(QGraphicsSceneMouseEvent *event)
@@ -34,8 +35,8 @@ void exitbutton::mousePressEvent(QGraphicsSceneMouseEvent *event)
         widget->hide();
         scene->show();
 
-        delete sound;
-        delete timer;
+        // delete sound;
+        // delete timer;
     }
     update();
 }

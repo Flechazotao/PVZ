@@ -42,7 +42,9 @@ void swimmingpoolshop::advance(int phase)
     if (++counter >= time)
     {
         counter = 0;
-        scene()->addItem(new classicSun);
+        classicSun *s=new classicSun;
+        s->setZValue(3);
+        scene()->addItem(s);
     }
 }
 

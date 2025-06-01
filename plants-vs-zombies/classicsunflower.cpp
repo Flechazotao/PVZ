@@ -23,6 +23,8 @@ void classicSunFlower::advance(int phase)
     else if (++counter >= time)
     {
         counter = 0;
-        scene()->addItem(new classicSun(pos()));
+        classicSun *s=new classicSun(pos());
+        s->setZValue(3);
+        scene()->addItem(s);
     }
 }
