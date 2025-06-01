@@ -128,11 +128,9 @@
         <file>Picture/Plant/lilypad/0.gif</file>
         <file>Picture/Plant_introduce/pool.png</file>
         <file>pvz.res/LilyPad.png</file>
-        <file>Picture/Plant_introduce/card_lilypad.png</file>
         <file>Picture/Plant/lilypad/LilyPad.gif</file>
         <file>Picture/Plant_introduce/pool.png</file>
         <file>pvz.res/LilyPad.png</file>
-        <file>Picture/Plant_introduce/card_lilypad.png</file>
         <file>Picture/Zombie/ConeheadZombie/0.gif</file>
         <file>Picture/Zombie/ConeheadZombie/1.gif</file>
         <file>Picture/Zombie/ConeheadZombie/ConeheadZombie.gif</file>
@@ -186,5 +184,16 @@
         <file>Picture/Pea/PeaIce_0.png</file>
         <file>Picture/Pea/PeaNormal_0.png</file>
         <file>Picture/Screen/ChooserBackground.png</file>
+        <file>Picture/UraniwaNi.mp3</file>
+        <file>Picture/UraniwaNi.ogg</file>
+        <file>Picture/Plant_introduce/card_lilypad.png</file>
+        <file>Picture/shop/card_CherryBomb.png</file>
+        <file>Picture/shop/card_LilyPad.png</file>
+        <file>Picture/shop/card_Peashooter.png</file>
+        <file>Picture/shop/card_PotatoMine.png</file>
+        <file>Picture/shop/card_Repeater.png</file>
+        <file>Picture/shop/card_SnowPea.png</file>
+        <file>Picture/shop/card_SunFlower.png</file>
+        <file>Picture/shop/card_WallNut.png</file>
     </qresource>
 </RCC>

@@ -24,12 +24,10 @@ void swimmingpoolcard::paint(QPainter *painter, const QStyleOptionGraphicsItem *
     Q_UNUSED(option)
     Q_UNUSED(widget)
     painter->scale(0.6, 0.58);
-    painter->drawPixmap(QRect(-50, -70, 100, 140), QPixmap(":/pvz.res/Card.png"));
-    painter->drawPixmap(QRect(-35, -42, 70, 70), QPixmap(":/pvz.res/" + text + ".png"));
+    painter->drawPixmap(QRect(-50, -70, 100, 140), QPixmap(":/Picture/shop/card_"+text+".png"));
     QFont font;
     font.setPointSizeF(15);
     painter->setFont(font);
-    painter->drawText(-30, 60, QString().asprintf("%3d", cost[map[text]]));
     if (counter < cool[map[text]])
     {
         QBrush brush(QColor(0, 0, 0, 200));

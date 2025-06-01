@@ -8,6 +8,7 @@
 #include "loginscene.h"
 #include "qdatetime.h"
 #include "qsoundeffect.h"
+#include "qmediaplayer.h"
 #include "qtimer.h"
 #include "screenzombie.h"
 #include "basiczombie.h"
@@ -26,6 +27,7 @@ swimmingpoolscene::swimmingpoolscene(QWidget *parent)
     srand(uint(QTime(0,0,0).secsTo(QTime::currentTime())));
 
     //设置并播放背景音乐
+
     QSoundEffect * sound = new QSoundEffect(this);
     sound->setSource(QUrl::fromLocalFile(":/pvz.res/seeyouagain.wav"));
     //sound->setLoopCount(5);这里背景音乐无法循环播放
@@ -33,6 +35,17 @@ swimmingpoolscene::swimmingpoolscene(QWidget *parent)
     sound->setLoopCount(QSoundEffect::Infinite);//循环播放
     sound->setVolume(0.25f);//设置声音大小
     sound->play();
+
+    /*
+    QMediaPlayer *player = new QMediaPlayer(this);
+    QMediaPlaylist *playlist = new QMediaPlaylist(player);
+    playlist->addMedia(QUrl("qrc:/Picture/UraniwaNi.mp3"));
+    playlist->setPlaybackMode(QMediaPlaylist::Loop); // 循环播放
+
+    player->setPlaylist(playlist);
+    player->setVolume(25); // 范围0-100
+    player->play();*/
+
 
     //创建计时器
     timer = new QTimer;
