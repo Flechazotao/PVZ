@@ -169,5 +169,22 @@
         <file>Picture/Zombie/DuckyTubeZombie2/Attack.gif</file>
         <file>Picture/Zombie/DuckyTubeZombie2/Walk1.gif</file>
         <file>Picture/Zombie/DuckyTubeZombie2/Walk2.gif</file>
+        <file>Picture/Screen/Boom.png</file>
+        <file>Picture/Screen/car.png</file>
+        <file>Picture/Screen/GrowSoil.png</file>
+        <file>Picture/Screen/PanelBackground.png</file>
+        <file>Picture/Screen/shovel.png</file>
+        <file>Picture/Screen/shovelSlot.png</file>
+        <file>Picture/Screen/StartButton.png</file>
+        <file>Picture/Screen/Sun.gif</file>
+        <file>Picture/Screen/Tombstones.png</file>
+        <file>Picture/Screen/ZombieNote1.png</file>
+        <file>Picture/Screen/ZombieNote2.png</file>
+        <file>Picture/Screen/ZombieNote3.png</file>
+        <file>Picture/Screen/ZombiesWon.png</file>
+        <file>Picture/Button.png</file>
+        <file>Picture/Pea/PeaIce_0.png</file>
+        <file>Picture/Pea/PeaNormal_0.png</file>
+        <file>Picture/Screen/ChooserBackground.png</file>
     </qresource>
 </RCC>

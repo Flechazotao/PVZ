@@ -7,7 +7,7 @@ string info="莲叶可以让你种植非水生植物在它上面。\n特点：�
 lilypad::lilypad() {
     hp = 300;
     time = int(10.0 * 1000 / 33);
-    setMovie(":/pvz.res/LilyPad.png");
+    setMovie(":/Picture/Plant/lilypad/LilyPad.gif");
     setName(name);
     setInfo(info);
 }

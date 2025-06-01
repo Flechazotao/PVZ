@@ -9,7 +9,7 @@ ScreenZombie::ScreenZombie()
     speed = 80.0 * 33 / 1000 / 4.7;
     setName(name);
     setInfo(info);
-    setMovie(":/pvz.res/ScreenZombieWalk.gif");
+    setMovie(":/Picture/Zombie/ScreenDoorZombie/ScreenDoorZombie.gif");
 }
 
 void ScreenZombie::advance(int phase)
@@ -22,8 +22,8 @@ void ScreenZombie::advance(int phase)
         if (state < 2)
         {
             state = 2;
-            setMovie(":/pvz.res/ZombieDie.gif");
-            setHead(":/pvz.res/ZombieHead.gif");
+            setMovie(":/Picture/Zombie/Zombie/ZombieDie.gif");
+            setHead(":/Picture/Zombie/Zombie/ZombieHead.gif");
         }
         else if (movie->currentFrameNumber() == movie->frameCount() - 1)
             delete this;
@@ -37,14 +37,14 @@ void ScreenZombie::advance(int phase)
         if (state != 1)
         {
             state = 1;
-            setMovie(":/pvz.res/ScreenZombieAttack.gif");
+            setMovie(":/Picture/Zombie/ScreenDoorZombie/ScreenDoorZombieAttack.gif");
         }
         return;
     }
     if (state)
     {
         state = 0;
-        setMovie(":/pvz.res/ScreenZombieWalk.gif");
+        setMovie(":/Picture/Zombie/ScreenDoorZombie/ScreenDoorZombie.gif");
     }
     setX(x() - speed);
 }

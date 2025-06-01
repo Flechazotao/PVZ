@@ -6,7 +6,7 @@ ConeZombie::ConeZombie()
     hp = 640;
     atk = 100 * 33 / 1000;
     speed = 80.0 * 33 / 1000 / 4.7;
-    setMovie(":/pvz.res/ConeZombieWalk.gif");
+    setMovie(":/Picture/Zombie/ConeheadZombie/ConeheadZombie.gif");
     setName(name);
     setInfo(info);
 }
@@ -21,8 +21,8 @@ void ConeZombie::advance(int phase)
         if (state < 2)
         {
             state = 2;
-            setMovie(":/pvz.res/ZombieDie.gif");
-            setHead(":/pvz.res/ZombieHead.gif");
+            setMovie(":/Picture/Zombie/Zombie/ZombieDie.gif");
+            setHead(":/Picture/Zombie/Zombie/ZombieHead.gif");
         }
         else if (movie->currentFrameNumber() == movie->frameCount() - 1)
             delete this;
@@ -36,14 +36,14 @@ void ConeZombie::advance(int phase)
         if (state != 1)
         {
             state = 1;
-            setMovie(":/pvz.res/ConeZombieAttack.gif");
+            setMovie(":/Picture/Zombie/ConeheadZombie/ConeheadZombieAttack.gif");
         }
         return;
     }
     if (state)
     {
         state = 0;
-        setMovie(":/pvz.res/ConeZombieWalk.gif");
+        setMovie(":/Picture/Zombie/ConeheadZombie/ConeheadZombie.gif");
     }
     setX(x() - speed);
 }

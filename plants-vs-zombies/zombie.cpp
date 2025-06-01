@@ -115,4 +115,3 @@ string Zombie::getName(){
     return Zombiename;
 }
 
-

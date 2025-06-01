@@ -8,6 +8,7 @@ class DuckyTubeZombie2: public Zombie
 {
 public:
     DuckyTubeZombie2();
+    void advance(int phase) override;
 };
 
 #endif // DUCKYTUBEZOMBIE2_H

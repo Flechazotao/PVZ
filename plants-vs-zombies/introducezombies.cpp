@@ -7,6 +7,7 @@
 #include "screenzombie.h"
 #include "footballzombie.h"
 #include "duckytubezombie1.h"
+#include "duckytubezombie2.h"
 #include <QVBoxLayout>
 
 introducezombies::introducezombies(QWidget *parent)
@@ -110,6 +111,6 @@ void introducezombies::on_DuckyTubeZombie1_clicked()
 
 void introducezombies::on_DuckyTubeZombie2_clicked()
 {
-
+    showMovieAndInfo(new DuckyTubeZombie2,":/Picture/Zombie/DuckyTubeZombie2/1.gif");
 }
 

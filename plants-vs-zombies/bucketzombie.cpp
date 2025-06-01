@@ -10,7 +10,7 @@ BucketZombie::BucketZombie()
     speed = 80.0 * 33 / 1000 / 4.7;
     setName(name);
     setInfo(info);
-    setMovie(":/pvz.res/BucketZombieWalk.gif");
+    setMovie(":/Picture/Zombie/BucketheadZombie/BucketheadZombie.gif");
 }
 
 void BucketZombie::advance(int phase)
@@ -23,8 +23,8 @@ void BucketZombie::advance(int phase)
         if (state < 2)
         {
             state = 2;
-            setMovie(":/pvz.res/ZombieDie.gif");
-            setHead(":/pvz.res/ZombieHead.gif");
+            setMovie(":/Picture/Zombie/Zombie/ZombieDie.gif");
+            setHead(":/Picture/Zombie/Zombie/ZombieHead.gif");
         }
         else if (movie->currentFrameNumber() == movie->frameCount() - 1)
             delete this;
@@ -38,14 +38,14 @@ void BucketZombie::advance(int phase)
         if (state != 1)
         {
             state = 1;
-            setMovie(":/pvz.res/BucketZombieAttack.gif");
+            setMovie(":/Picture/Zombie/BucketheadZombie/BucketheadZombieAttack.gif");
         }
         return;
     }
     if (state)
     {
         state = 0;
-        setMovie(":/pvz.res/BucketZombieWalk.gif");
+        setMovie(":/Picture/Zombie/BucketheadZombie/BucketheadZombie.gif");
     }
     setX(x() - speed);
 }

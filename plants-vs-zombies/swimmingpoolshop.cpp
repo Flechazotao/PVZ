@@ -154,5 +154,3 @@ void swimmingpoolshop::updateCardState(const QString& cardText)
     }
     counter = 0;
 }
-
-
