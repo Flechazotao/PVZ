@@ -3,6 +3,7 @@
 
 #include "other.h"
 #include "plant.h"
+#include "lilypad.h"
 
 class Shovel : public Other
 {

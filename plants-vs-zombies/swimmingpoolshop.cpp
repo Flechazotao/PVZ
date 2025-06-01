@@ -53,145 +53,106 @@ bool swimmingpoolshop::isWaterTile(QPointF pos) const
     return (gridY == 2 || gridY == 3); //
 }
 
-//种植植物;
+// 种植植物
 void swimmingpoolshop::addPlant(QString s, QPointF pos)
 {
-
     QList<QGraphicsItem *> items = scene()->items(pos);
-
-    //获取植物类型;
     int plantType = swimmingpoolcard::map[s];
-
-    //判断当前是否为泳池区域;
     bool isWater = isWaterTile(pos);
 
-    //选择的不是莲叶且是泳池区域
-    //需要种在莲叶上面;
-    if (plantType != 5 && isWater) { // 5是荷叶的编号
-        qDebug() << "进入水域检查";
-        lilypad *targetPad = nullptr;
+    // 修改后的非莲叶植物水上种植逻辑
+    if (plantType != 5 && isWater) {
+        if (sun < swimmingpoolcard::cost[plantType]) {
+            qDebug() << "阳光不足!";
+            return;
+        }
 
-        // 查找点击位置的所有莲叶
+        lilypad *targetPad = nullptr;
         foreach (QGraphicsItem *item, items) {
-            if (item->type() == Plant::Type) {
-                lilypad *pad = qgraphicsitem_cast<lilypad *>(item);
-                if (pad) {
-                    // 找到莲叶后检查是否已有植物
-                    if (!pad->hasPlant()) {
-                        targetPad = pad;
-                        break; // 使用第一个可用的莲叶
-                    } else {
-                        qDebug() << "莲叶上已有植物";
-                    }
+            if (item->type() == lilypad::Type) {
+                lilypad *pad = static_cast<lilypad*>(item);
+                if (!pad->hasPlant()) {
+                    targetPad = pad;
+                    break;
+                } else {
+                    qDebug() << "莲叶上已有植物，无法种植！";
+                    return;
                 }
             }
         }
+
         if (!targetPad) {
-            // 提示需要先放置莲叶或莲叶已被占用
-            qDebug() << "Cannot plant on water without available lily pad!";
+            qDebug() << "水面上没有可用的莲叶！";
             return;
         }
 
-        // 检查阳光是否足够
-        if (sun < swimmingpoolcard::cost[plantType]) {
-            qDebug() << "Not enough sun!";
-            return;
-        }
-        //扣除阳光;
-        sun -= swimmingpoolcard::cost[swimmingpoolcard::map[s]];
-
-        Plant *plant = nullptr;
-        switch (swimmingpoolcard::map[s])
-        {
-        case 0:
-            plant = new classicSunFlower; break;
-        case 1:
-            plant = new classicpeashooter; break;
-        case 2:
-            plant = new CherryBomb; break;
-        case 3:
-            plant = new WallNut; break;
-        case 4:
-            plant = new classicSnowPea; break;
-        case 5:
-            plant = new lilypad; break;
-        case 6:
-            plant = new classicRepeater; break;
-        }
+        sun -= swimmingpoolcard::cost[plantType];
+        Plant *plant = createPlantByType(plantType);
+        scene()->addItem(plant);
+        plant->setZValue(1);
         targetPad->setHostedPlant(plant);
-        plant->setZValue(1);//图层1;
-        plant->setPos(pos);
-        scene()->addItem(plant);
-        QList<QGraphicsItem *> child = childItems();
-        foreach (QGraphicsItem *item, child)
-        {
-            swimmingpoolcard *card = qgraphicsitem_cast<swimmingpoolcard *>(item);
-            if (card->text == s)
-                card->counter = 0;
-        }
-        counter = 0;
-        return;
-    }
-    //选择的是莲叶,那么只能种植在泳池区域.否则直接return;
-    else if(plantType==5 && !isWater){
+        updateCardState(s);
         return;
     }
 
-        //先检查位置是否已经被种植
-        foreach (QGraphicsItem *item, items)
-            if (item->type() == Plant::Type)
-                return;
+    // 莲叶只能种在水上
+    if (plantType == 5 && !isWater) return;
 
-        // 检查阳光是否足够
-        if (sun < swimmingpoolcard::cost[plantType]) {
-            qDebug() << "Not enough sun!";
-            return;
-        }
-        //扣除阳光;
-        sun -= swimmingpoolcard::cost[swimmingpoolcard::map[s]];
+    // 陆地种植逻辑
+    if (isPositionOccupied(items)) return;
 
-        //顺利种植;
-        Plant *plant = nullptr;
-        switch (swimmingpoolcard::map[s])
-        {
-        case 0:
-            plant = new classicSunFlower; break;
-        case 1:
-            plant = new classicpeashooter; break;
-        case 2:
-            plant = new CherryBomb; break;
-        case 3:
-            plant = new WallNut; break;
-        case 4:
-            plant = new classicSnowPea; break;
-        case 5:
-            plant = new lilypad; break;
-        case 6:
-            plant = new classicRepeater; break;
-        }
-        if(plantType==5)
-        {
-            QPointF adjustedPos = pos;
-            adjustedPos.setY(pos.y() + 20);
-            plant->setZValue(1);//图层1;
-            plant->setPos(adjustedPos);
-        }
-        else
-        {
-            plant->setPos(pos);
-            plant->setZValue(1);//图层1;
-        }
-
-        scene()->addItem(plant);
-        QList<QGraphicsItem *> child = childItems();
-        foreach (QGraphicsItem *item, child)
-        {
-            swimmingpoolcard *card = qgraphicsitem_cast<swimmingpoolcard *>(item);
-            if (card->text == s)
-                card->counter = 0;
-        }
-        counter = 0;
+    if (sun < swimmingpoolcard::cost[plantType]) {
+        qDebug() << "阳光不足!";
         return;
+    }
+
+    sun -= swimmingpoolcard::cost[plantType];
+    Plant *plant = createPlantByType(plantType);
+
+    // 特殊处理莲叶位置
+    QPointF adjustedPos = pos;
+    if (plantType == 5) adjustedPos.setY(pos.y() + 20);
+
+    scene()->addItem(plant);
+    plant->setZValue(1);
+    plant->setPos(adjustedPos);
+
+    updateCardState(s);
+}
+
+// 辅助函数：创建植物
+Plant* swimmingpoolshop::createPlantByType(int type)
+{
+    switch (type) {
+    case 0: return new classicSunFlower;
+    case 1: return new classicpeashooter;
+    case 2: return new CherryBomb;
+    case 3: return new WallNut;
+    case 4: return new classicSnowPea;
+    case 5: return new lilypad;
+    case 6: return new classicRepeater;
+    default: return nullptr;
+    }
+}
+
+// 辅助函数：检查位置是否被占用
+bool swimmingpoolshop::isPositionOccupied(const QList<QGraphicsItem*>& items)
+{
+    foreach (QGraphicsItem *item, items)
+    if (item->type() == Plant::Type || item->type() == lilypad::Type)
+        return true;
+    return false;
+}
+
+// 辅助函数：更新卡片状态
+void swimmingpoolshop::updateCardState(const QString& cardText)
+{
+    foreach (QGraphicsItem *item, childItems()) {
+        if (auto card = dynamic_cast<swimmingpoolcard *>(item)) {
+            if (card->text == cardText) card->counter = 0;
+        }
+    }
+    counter = 0;
 }
 
 

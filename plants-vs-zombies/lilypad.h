@@ -13,6 +13,7 @@ public:
     bool hasPlant();
     void setHostedPlant(Plant *newplant);
     QRectF boundingRect() const override;
+    void clearPlant();
 private:
     Plant*p=nullptr;    //表示莲上的植物;
 };

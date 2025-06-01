@@ -24,6 +24,10 @@ public:
     void advance(int phase) override;
     void addPlant(QString s, QPointF pos);
     bool isWaterTile(QPointF pos) const;
+    Plant* createPlantByType(int type);
+    bool isPositionOccupied(const QList<QGraphicsItem*>& items);
+    void updateCardState(const QString& cardText);
+
 private:
     int counter;
     int time;

@@ -47,13 +47,33 @@ void Shovel::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     setCursor(Qt::ArrowCursor);
 }
 
-void Shovel::removePlant(QPointF pos)
-{
-    QList<QGraphicsItem *> items = scene()->items(pos);
-    foreach (QGraphicsItem *item, items)
-        if (item->type() == Plant::Type)
-        {
-            delete item;
+void Shovel::removePlant(QPointF pos) {
+    QList<QGraphicsItem*> items = scene()->items(pos);
+
+    foreach (QGraphicsItem *item, items) {
+        if (item->type() == Plant::Type) {
+            Plant *plant = static_cast<Plant*>(item);
+
+            // 特殊处理莲叶检测
+            QRectF detectionRect = plant->boundingRect();
+            if (dynamic_cast<lilypad*>(plant)) {   
+                detectionRect.translate(0, -20); // 向上补偿20px
+            }
+
+            QList<QGraphicsItem*> colliders = scene()->items(
+                plant->mapRectToScene(detectionRect)
+                );
+
+            foreach (QGraphicsItem *collider, colliders) {
+                if (collider != item && collider->type() == lilypad::Type) {
+                    qDebug() << "Found lilypad at:" << collider->pos();
+                    lilypad *lily = static_cast<lilypad*>(collider); // 转换为lilypad指针
+                    lily->clearPlant(); // 调用方法
+                }
+            }
+
+            delete plant;
             return;
         }
+    }
 }

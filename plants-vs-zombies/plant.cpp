@@ -34,7 +34,7 @@ bool Plant::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode m
 {
     Q_UNUSED(mode)
     //左右30像素内是否存在僵尸
-    return other->type() == Zombie::Type && qFuzzyCompare(other->y(), y()) && qAbs(other->x() - x()) < 30;
+    return other->type() == Zombie::Type && qFuzzyCompare(other->y(), y())  && qAbs(other->x() - x()) < 30;
 }
 
 int Plant::type() const
