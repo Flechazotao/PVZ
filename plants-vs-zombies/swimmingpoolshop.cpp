@@ -26,11 +26,11 @@ void swimmingpoolshop::paint(QPainter *painter, const QStyleOptionGraphicsItem *
 {
     Q_UNUSED(option)
     Q_UNUSED(widget)
-    painter->drawPixmap(QRect(-270, -45, 540, 90), QPixmap(":/pvz.res/Shop.png"));
+    painter->drawPixmap(QRect(-270, -45, 540, 90), QPixmap(":/Picture/Screen/ChooserBackground.png"));
     QFont font;
     font.setPointSizeF(15);
     painter->setFont(font);
-    painter->drawText(QRectF(-255, 18, 65, 22), Qt::AlignCenter, QString::number(sun));
+    painter->drawText(QRectF(-263, 19, 65, 22), Qt::AlignCenter, QString::number(sun));
     painter->drawPoint(-220, 0);
 }
 
