@@ -23,7 +23,7 @@ void classicPea::paint(QPainter *painter, const QStyleOptionGraphicsItem *option
 bool classicPea::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
     Q_UNUSED(mode)
-    return other->type() == Zombie::Type && qFuzzyCompare(other->y(), y()) && qAbs(other->x() - x()) < 15;
+    return other->type() == Zombie::Type && qAbs(other->y() - y()) < 30 && qAbs(other->x() - x()) < 15;
 }
 
 void classicPea::advance(int phase)

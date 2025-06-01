@@ -17,6 +17,7 @@ public:
     void addZombie();
     void check();
     void on_exit_clicked();
+    void updateCountdown();
     QMediaPlayer *player = nullptr;
     QAudioOutput *audioOutput = nullptr;
 
@@ -25,6 +26,8 @@ private:
     QTimer *timer;
     QGraphicsScene *scene;
     QGraphicsView *view;
+    QTimer *countdownTimer;  // 倒计时计时器
+    int remainingTime;       // 剩余时间(秒)
 };
 
 

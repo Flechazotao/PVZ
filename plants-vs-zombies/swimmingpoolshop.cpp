@@ -42,7 +42,9 @@ void swimmingpoolshop::advance(int phase)
     if (++counter >= time)
     {
         counter = 0;
-        scene()->addItem(new classicSun);
+        classicSun *s=new classicSun;
+        s->setZValue(3);
+        scene()->addItem(s);
     }
 }
 
@@ -50,7 +52,7 @@ void swimmingpoolshop::advance(int phase)
 bool swimmingpoolshop::isWaterTile(QPointF pos) const
 {
     int gridY = (int(pos.y()) - 81) / 82;
-    return (gridY == 2 || gridY == 3); //
+    return (gridY == 2 || gridY == 3);
 }
 
 // 种植植物
@@ -60,13 +62,17 @@ void swimmingpoolshop::addPlant(QString s, QPointF pos)
     int plantType = swimmingpoolcard::map[s];
     bool isWater = isWaterTile(pos);
 
-    // 修改后的非莲叶植物水上种植逻辑
+    // 非莲叶植物水上种植逻辑
     if (plantType != 5 && isWater) {
         if (sun < swimmingpoolcard::cost[plantType]) {
             qDebug() << "阳光不足!";
             return;
         }
 
+        //定位到荷叶坐标;
+        QPointF adjustedPos = pos;
+        adjustedPos.setY(pos.y() + 20);
+        QList<QGraphicsItem*> items = scene()->items(adjustedPos);
         lilypad *targetPad = nullptr;
         foreach (QGraphicsItem *item, items) {
             if (item->type() == lilypad::Type) {
@@ -80,7 +86,6 @@ void swimmingpoolshop::addPlant(QString s, QPointF pos)
                 }
             }
         }
-
         if (!targetPad) {
             qDebug() << "水面上没有可用的莲叶！";
             return;
@@ -111,11 +116,10 @@ void swimmingpoolshop::addPlant(QString s, QPointF pos)
 
     // 特殊处理莲叶位置
     QPointF adjustedPos = pos;
-    if (plantType == 5) adjustedPos.setY(pos.y() + 20);
-
+    if (plantType == 5)     adjustedPos.setY(pos.y() + 20);
+    plant->setPos(adjustedPos);
     scene()->addItem(plant);
     plant->setZValue(1);
-    plant->setPos(adjustedPos);
 
     updateCardState(s);
 }

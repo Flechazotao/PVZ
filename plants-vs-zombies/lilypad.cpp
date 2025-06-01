@@ -44,9 +44,9 @@ void lilypad::setHostedPlant(Plant*newplant){
     qDebug()<<"成功种植";
     p=newplant;
     QPointF offset(
-        (boundingRect().width() - newplant->boundingRect().width()) / 3,
+        (boundingRect().width() - newplant->boundingRect().width()) / 2,
         -newplant->boundingRect().height() / 3
         );
-    newplant->setPos(pos() + offset);
+    newplant->setPos(pos()+offset);
     return;
 }

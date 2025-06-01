@@ -49,6 +49,12 @@ swimmingpoolscene::swimmingpoolscene(QWidget *parent)
 
     //创建计时器
     timer = new QTimer;
+    //创建倒计时器;
+    countdownTimer = new QTimer(this);
+    // 设置初始时间(例如5分钟=300秒)
+    remainingTime = 300;
+    // 启动倒计时计时器(每秒触发一次)
+    countdownTimer->start(1000);
 
     //场景创建
     scene = new QGraphicsScene(this);
@@ -71,7 +77,7 @@ swimmingpoolscene::swimmingpoolscene(QWidget *parent)
     scene->addItem(button);
 
     // 创建按钮返回主页面
-    exitbutton *exit=new exitbutton(sound, timer,this);
+    exitbutton *exit=new exitbutton(sound, timer,this,"返回主页面");
     exit->setPos(970,60);
     scene->addItem(exit);
 
@@ -106,18 +112,35 @@ swimmingpoolscene::swimmingpoolscene(QWidget *parent)
     connect(timer, &QTimer::timeout, scene, &QGraphicsScene::advance);
     connect(timer, &QTimer::timeout, this, &swimmingpoolscene::addZombie);
     connect(timer, &QTimer::timeout, this, &swimmingpoolscene::check);
+    connect(countdownTimer, &QTimer::timeout, this, &swimmingpoolscene::updateCountdown);
 
     //启动定时器
     timer->start(33);
     view->show();
 }
 
-swimmingpoolscene::~swimmingpoolscene()
+// 在析构函数中停止所有计时器
+swimmingpoolscene::~swimmingpoolscene() {
+    countdownTimer->stop();
+    timer->stop();
+    delete sound;   // sound 被删除
+    delete timer;   // timer 被删除
+    delete scene;   // scene 被删除
+    delete view;    // view 被删除
+}
+
+void swimmingpoolscene::updateCountdown()
 {
-    delete sound;
-    delete timer;
-    delete scene;
-    delete view;
+    remainingTime--;
+    // 时间到，游戏结束
+    if (remainingTime <= 0) {
+        countdownTimer->stop(); //停止倒计时;
+        exitbutton*winbutton=new exitbutton(sound, timer,this,"游戏胜利");
+        winbutton->setPos(600,300);
+        winbutton->setZValue(4);
+        scene->addItem(winbutton);
+        return;
+    }
 }
 
 //绘制僵尸
@@ -180,9 +203,11 @@ void swimmingpoolscene::check()
         foreach (QGraphicsItem *item, items)
             if (item->type() == Zombie::Type && item->x() < 200)
             {
+                exitbutton*winbutton=new exitbutton(sound, timer,this,"游戏失败");
+                winbutton->setPos(600,300);
+                winbutton->setZValue(4);
+                scene->addItem(winbutton);
                 scene->addPixmap(QPixmap(":/Picture/Screen/ZombiesWon.png"))->setPos(336, 40);
-                scene->advance();
-                timer->stop();
                 return;
             }
     }
