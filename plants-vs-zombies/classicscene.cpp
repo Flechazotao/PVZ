@@ -20,7 +20,7 @@ classicscene::classicscene(QWidget *parent) : QMainWindow(parent)
     srand(uint(QTime(0,0,0).secsTo(QTime::currentTime())));//生成随机数
     //设置并播放背景音乐
     QSoundEffect * sound = new QSoundEffect(this);
-    sound->setSource(QUrl::fromLocalFile(":/pvz.res/seeyouagain.wav"));
+    sound->setSource(QUrl::fromLocalFile(":/Picture/UraniwaNi.wav"));
     //sound->setLoopCount(5);这里背景音乐无法循环播放
     //sound->setVolume(0.25f);
     sound->setLoopCount(QSoundEffect::Infinite);//循环播放

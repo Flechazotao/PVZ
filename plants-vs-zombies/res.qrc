@@ -184,8 +184,6 @@
         <file>Picture/Pea/PeaIce_0.png</file>
         <file>Picture/Pea/PeaNormal_0.png</file>
         <file>Picture/Screen/ChooserBackground.png</file>
-        <file>Picture/UraniwaNi.mp3</file>
-        <file>Picture/UraniwaNi.ogg</file>
         <file>Picture/Plant_introduce/card_lilypad.png</file>
         <file>Picture/shop/card_CherryBomb.png</file>
         <file>Picture/shop/card_LilyPad.png</file>
@@ -195,5 +193,8 @@
         <file>Picture/shop/card_SnowPea.png</file>
         <file>Picture/shop/card_SunFlower.png</file>
         <file>Picture/shop/card_WallNut.png</file>
+        <file>Picture/UraniwaNi.mp3</file>
+        <file>Picture/UraniwaNi.ogg</file>
+        <file>Picture/UraniwaNi.wav</file>
     </qresource>
 </RCC>
